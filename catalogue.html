@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catalogue — TruePick</title>
+<meta name="description" content="Browse every product TruePick has picked, filter by category, and jump straight to the store.">
+<link rel="icon" href="assets/img/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<div id="tp-header"></div>
+<div id="tp-drawer"></div>
+
+<main>
+  <div class="page-h">
+    <div class="crumb"><a href="index.html">Home</a> / Catalogue</div>
+    <h1 id="title">Catalogue</h1>
+    <p id="count">Every product we've picked, in one place.</p>
+  </div>
+
+  <section class="cats">
+    <div class="chips" id="filter"></div>
+  </section>
+
+  <section class="section">
+    <div class="sec-h">
+      <h2 id="catLabel">All products</h2>
+      <select id="sort" class="btn btn-ghost" style="margin-left:auto;padding:9px 14px;font-weight:700">
+        <option value="featured">Sort: Featured</option>
+        <option value="low">Price: low to high</option>
+        <option value="high">Price: high to low</option>
+        <option value="rating">Top rated</option>
+      </select>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+</main>
+
+<div id="tp-footer"></div>
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/layout.js"></script>
+<script>
+TP.mountLayout('catalogue');
+(async () => {
+  const products = await TP.api('products');
+  const params = new URLSearchParams(location.search);
+  let active = params.get('cat') || 'All';
+  const cats = ['All', ...[...new Set((products || []).map(p => p.category))]];
+
+  const paintFilters = () => {
+    document.getElementById('filter').innerHTML = cats.map(c =>
+      `<a class="chip${c === active ? ' on' : ''}" href="catalogue.html${c === 'All' ? '' : '?cat=' + encodeURIComponent(c)}"
+          style="${c === active ? 'border-color:var(--blue);box-shadow:var(--shadow-sm)' : ''}">
+         <span class="ic">${TP.esc(c[0])}</span>${TP.esc(c)}</a>`).join('');
+  };
+  const paint = () => {
+    let list = active === 'All' ? products.slice() : products.filter(p => p.category === active);
+    const s = document.getElementById('sort').value;
+    if (s === 'low') list.sort((a, b) => a.price - b.price);
+    if (s === 'high') list.sort((a, b) => b.price - a.price);
+    if (s === 'rating') list.sort((a, b) => b.rating - a.rating);
+    document.getElementById('catLabel').textContent = active === 'All' ? 'All products' : active;
+    document.getElementById('title').textContent = active === 'All' ? 'Catalogue' : active;
+    document.getElementById('count').textContent = list.length + ' item' + (list.length === 1 ? '' : 's') + ' · prices compared across stores';
+    TP.renderGrid(document.getElementById('grid'), list);
+  };
+  paintFilters(); paint();
+  document.getElementById('sort').addEventListener('change', paint);
+})();
+</script>
+</body>
+</html>

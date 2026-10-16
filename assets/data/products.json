@@ -1,0 +1,571 @@
+[
+  {
+    "id": "minimalist-niacinamide-10",
+    "name": "Minimalist 10% Niacinamide Face Serum",
+    "category": "Skincare",
+    "brand": "Minimalist",
+    "price": 399,
+    "mrp": 599,
+    "rating": 4.6,
+    "ratingCount": 18422,
+    "badge": "Trending",
+    "badgeTone": "orange",
+    "image": "assets/img/p/minimalist-niacinamide-10.svg",
+    "short": "A lightweight 10% niacinamide serum that controls oil and fades marks.",
+    "description": "A water-light serum built around 10% niacinamide and 1% zinc. It helps regulate oil production, visibly reduces the look of old acne marks, and strengthens the skin barrier with daily use. Fragrance-free and non-comedogenic.",
+    "goodFor": {
+      "title": "This product is good for these people",
+      "intro": "You'll get the most out of this serum if any of these sound like you:",
+      "items": [
+        "Oily or combination skin that gets shiny by midday",
+        "Skin with old acne marks, dark spots or uneven tone",
+        "Enlarged-looking pores around the nose and cheeks",
+        "Anyone starting a simple, no-fuss skincare routine"
+      ]
+    },
+    "blocks": [
+      {
+        "type": "accordion",
+        "icon": "drop",
+        "title": "How to identify your skin type",
+        "subtitle": "Two quick checks — no dermatologist needed",
+        "items": [
+          {
+            "q": "If your skin is oily",
+            "a": "Wash your face, wait an hour, and press a tissue on your forehead and cheeks. If the tissue turns see-through and greasy all over, your skin is oily. You may also notice shine within an hour of washing and larger-looking pores."
+          },
+          {
+            "q": "If your skin is dry",
+            "a": "After washing, your skin feels tight and sometimes flaky, especially on the cheeks. The tissue stays dry with almost no oil, and makeup or moisturiser can sting slightly on application."
+          },
+          {
+            "q": "If your skin is combination",
+            "a": "The tissue shows oil on the T-zone (forehead, nose, chin) but stays clean on the cheeks. This is the most common type — oily in the middle, normal or dry at the edges."
+          },
+          {
+            "q": "If your skin is sensitive",
+            "a": "Your skin reddens, tingles or stings easily with new products, heat or sun. Patch-test anything new on your inner arm for 24 hours before using it on your face."
+          },
+          {
+            "q": "Still not sure?",
+            "a": "You can also visit a skin specialist (dermatologist) for a proper assessment, especially if you have persistent acne, rosacea or pigmentation. A 10-minute consultation removes all the guesswork."
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "blue",
+        "title": "Does this suit your skin type?",
+        "text": "Oily and combination skin: yes, this is a strong fit. Normal skin: fine as a light daily serum. Dry skin: use it with a richer moisturiser on top. Very sensitive skin: patch-test first, and start with alternate days."
+      },
+      {
+        "type": "pills",
+        "title": "If it doesn't suit you, try these instead",
+        "subtitle": "Alternatives matched to other skin types",
+        "items": [
+          {
+            "label": "Dry skin → Cetaphil Gentle Cleanser",
+            "href": "product.html?id=cetaphil-gentle-cleanser"
+          },
+          {
+            "label": "Sensitive skin → fragrance-free ceramide cream",
+            "href": "#"
+          },
+          {
+            "label": "Acne-prone → 2% salicylic acid face wash",
+            "href": "#"
+          }
+        ]
+      },
+      {
+        "type": "accordion",
+        "icon": "info",
+        "title": "Product details",
+        "items": [
+          {
+            "q": "How to use",
+            "a": "After cleansing, apply 2–3 drops on a dry face, morning or night. Follow with a moisturiser. Always use sunscreen in the morning."
+          },
+          {
+            "q": "Key ingredients",
+            "a": "10% Niacinamide, 1% Zinc PCA, Aqua, Glycerin. Fragrance-free, silicone-free, non-comedogenic."
+          },
+          {
+            "q": "Shelf life & storage",
+            "a": "24 months from manufacture. Store away from direct sunlight. Once opened, use within 6 months."
+          },
+          {
+            "q": "Precautions",
+            "a": "For external use only. Avoid the eye area. If irritation occurs, stop use and consult a doctor. Not recommended for children under 12."
+          }
+        ]
+      }
+    ],
+    "buttons": [
+      {
+        "platform": "Amazon",
+        "label": "Buy on Amazon",
+        "sub": "Free delivery · easy returns",
+        "url": "https://www.amazon.in/",
+        "logo": "assets/img/brands/amazon.svg",
+        "color": "#FF9900"
+      },
+      {
+        "platform": "Flipkart",
+        "label": "Buy on Flipkart",
+        "sub": "F-Assured · fastest delivery",
+        "url": "https://www.flipkart.com/",
+        "logo": "assets/img/brands/flipkart.svg",
+        "color": "#2874F0"
+      }
+    ]
+  },
+  {
+    "id": "iphone-15-128",
+    "name": "iPhone 15 · 128GB",
+    "category": "Phones",
+    "brand": "Apple",
+    "price": 69900,
+    "mrp": 79900,
+    "rating": 4.8,
+    "ratingCount": 2413,
+    "badge": "Top Pick",
+    "badgeTone": "blue",
+    "image": "assets/img/p/iphone-15-128.svg",
+    "short": "A16 Bionic, 48MP main camera, USB-C and Dynamic Island.",
+    "description": "The iPhone 15 brings the Dynamic Island, a 48MP main camera with 2x telephoto, and USB-C to the standard line-up. Powered by the A16 Bionic chip, it handles everything from 4K video to heavy games without a stutter.",
+    "goodFor": {
+      "title": "This product is good for these people",
+      "intro": "Consider the iPhone 15 if:",
+      "items": [
+        "You shoot a lot of photos and video and want great results straight out of the camera",
+        "You want 4–5 years of smooth software updates",
+        "You're already inside the Apple ecosystem (AirPods, Watch, Mac)",
+        "You prefer a compact phone that's still flagship-fast"
+      ]
+    },
+    "blocks": [
+      {
+        "type": "accordion",
+        "icon": "info",
+        "title": "Product details",
+        "items": [
+          {
+            "q": "Display",
+            "a": "6.1-inch Super Retina XDR OLED, 60Hz, 2000 nits peak brightness."
+          },
+          {
+            "q": "Camera",
+            "a": "48MP main + 12MP ultra-wide. 2x optical-quality telephoto. 4K60 Dolby Vision video."
+          },
+          {
+            "q": "Battery & charging",
+            "a": "Up to 20 hours video playback. USB-C, supports fast charge with a 20W+ adapter."
+          },
+          {
+            "q": "In the box",
+            "a": "iPhone, USB-C cable, documentation. No charger or earbuds included."
+          }
+        ]
+      },
+      {
+        "type": "pills",
+        "title": "Alternatives to consider",
+        "items": [
+          {
+            "label": "Android, same budget → Samsung Galaxy S23",
+            "href": "#"
+          },
+          {
+            "label": "Bigger screen → iPhone 15 Plus",
+            "href": "#"
+          },
+          {
+            "label": "Better value audio → boAt Rockerz 550",
+            "href": "product.html?id=boat-rockerz-550"
+          }
+        ]
+      }
+    ],
+    "buttons": [
+      {
+        "platform": "Amazon",
+        "label": "Buy on Amazon",
+        "sub": "Bank offers available",
+        "url": "https://www.amazon.in/",
+        "logo": "assets/img/brands/amazon.svg",
+        "color": "#FF9900"
+      },
+      {
+        "platform": "Flipkart",
+        "label": "Buy on Flipkart",
+        "sub": "F-Assured · no-cost EMI",
+        "url": "https://www.flipkart.com/",
+        "logo": "assets/img/brands/flipkart.svg",
+        "color": "#2874F0"
+      }
+    ]
+  },
+  {
+    "id": "boat-rockerz-550",
+    "name": "boAt Rockerz 550 Over-Ear Headphones",
+    "category": "Audio",
+    "brand": "boAt",
+    "price": 1999,
+    "mrp": 4990,
+    "rating": 4.5,
+    "ratingCount": 52190,
+    "badge": "Bestseller",
+    "badgeTone": "yellow",
+    "image": "assets/img/p/boat-rockerz-550.svg",
+    "short": "20-hour battery, 50mm drivers and a punchy bass signature.",
+    "description": "Lightweight over-ear headphones with 50mm dynamic drivers, up to 20 hours of playback and a physical bass switch. Bluetooth 5.0 with dual pairing and a built-in mic for calls.",
+    "goodFor": {
+      "title": "This product is good for these people",
+      "items": [
+        "Students and commuters who want long battery life on a budget",
+        "Anyone who likes a bass-heavy sound",
+        "Buyers who want a wired option when the battery runs out"
+      ]
+    },
+    "blocks": [
+      {
+        "type": "accordion",
+        "icon": "info",
+        "title": "Product details",
+        "items": [
+          {
+            "q": "Battery",
+            "a": "Up to 20 hours playback; charges fully in about 2 hours."
+          },
+          {
+            "q": "Drivers",
+            "a": "50mm dynamic drivers with a dedicated bass switch."
+          },
+          {
+            "q": "Connectivity",
+            "a": "Bluetooth 5.0 + 3.5mm aux cable for wired use."
+          }
+        ]
+      }
+    ],
+    "buttons": [
+      {
+        "platform": "Amazon",
+        "label": "Buy on Amazon",
+        "sub": "Usually dispatched in 1 day",
+        "url": "https://www.amazon.in/",
+        "logo": "assets/img/brands/amazon.svg",
+        "color": "#FF9900"
+      },
+      {
+        "platform": "Flipkart",
+        "label": "Buy on Flipkart",
+        "sub": "F-Assured",
+        "url": "https://www.flipkart.com/",
+        "logo": "assets/img/brands/flipkart.svg",
+        "color": "#2874F0"
+      }
+    ]
+  },
+  {
+    "id": "lenovo-ideapad-slim-3",
+    "name": "Lenovo IdeaPad Slim 3 · Ryzen 5",
+    "category": "Laptops",
+    "brand": "Lenovo",
+    "price": 41990,
+    "mrp": 56990,
+    "rating": 4.4,
+    "ratingCount": 3987,
+    "badge": "Top Pick",
+    "badgeTone": "blue",
+    "image": "assets/img/p/lenovo-ideapad-slim-3.svg",
+    "short": "16GB RAM, 512GB SSD and a 15.6-inch Full HD display.",
+    "description": "A dependable everyday laptop for work and study — Ryzen 5 processor, 16GB RAM, 512GB SSD and a 15.6-inch Full HD anti-glare screen, in a slim 1.6kg body.",
+    "goodFor": {
+      "title": "This product is good for these people",
+      "items": [
+        "Students and office users who mainly need documents, browsing and calls",
+        "Anyone who wants a big screen without spending laptop-flagship money",
+        "Light photo editing and casual gaming"
+      ]
+    },
+    "blocks": [
+      {
+        "type": "accordion",
+        "icon": "info",
+        "title": "Product details",
+        "items": [
+          {
+            "q": "Processor & memory",
+            "a": "AMD Ryzen 5 7000-series, 16GB DDR4 (upgradeable), 512GB NVMe SSD."
+          },
+          {
+            "q": "Display",
+            "a": "15.6-inch Full HD (1920x1080) anti-glare, 250 nits."
+          },
+          {
+            "q": "Ports & weight",
+            "a": "USB-C, 2x USB-A, HDMI, SD card reader. 1.62 kg."
+          }
+        ]
+      }
+    ],
+    "buttons": [
+      {
+        "platform": "Amazon",
+        "label": "Buy on Amazon",
+        "sub": "No-cost EMI available",
+        "url": "https://www.amazon.in/",
+        "logo": "assets/img/brands/amazon.svg",
+        "color": "#FF9900"
+      },
+      {
+        "platform": "Flipkart",
+        "label": "Buy on Flipkart",
+        "sub": "F-Assured",
+        "url": "https://www.flipkart.com/",
+        "logo": "assets/img/brands/flipkart.svg",
+        "color": "#2874F0"
+      }
+    ]
+  },
+  {
+    "id": "allen-solly-cotton-tee",
+    "name": "Allen Solly Cotton Crew T-Shirt",
+    "category": "Clothing",
+    "brand": "Allen Solly",
+    "price": 899,
+    "mrp": 1599,
+    "rating": 4.3,
+    "ratingCount": 8602,
+    "badge": "Feed Pick",
+    "badgeTone": "",
+    "image": "assets/img/p/allen-solly-cotton-tee.svg",
+    "short": "100% cotton, regular fit, holds shape wash after wash.",
+    "description": "A everyday crew-neck tee in 100% combed cotton. Regular fit with a ribbed neckline that doesn't sag, pre-shrunk so it keeps its size.",
+    "goodFor": {
+      "title": "This product is good for these people",
+      "items": [
+        "Everyday and office-casual wear",
+        "Anyone who wants a plain, well-fitting basic",
+        "Warm Indian summers — it breathes well"
+      ]
+    },
+    "blocks": [
+      {
+        "type": "accordion",
+        "icon": "info",
+        "title": "Size & care",
+        "items": [
+          {
+            "q": "Fit",
+            "a": "Regular fit. If you're between sizes, size up for a relaxed look."
+          },
+          {
+            "q": "Care",
+            "a": "Machine wash cold, tumble dry low, warm iron. Do not bleach."
+          }
+        ]
+      }
+    ],
+    "buttons": [
+      {
+        "platform": "Amazon",
+        "label": "Buy on Amazon",
+        "sub": "Free returns",
+        "url": "https://www.amazon.in/",
+        "logo": "assets/img/brands/amazon.svg",
+        "color": "#FF9900"
+      },
+      {
+        "platform": "Flipkart",
+        "label": "Buy on Flipkart",
+        "sub": "F-Assured",
+        "url": "https://www.flipkart.com/",
+        "logo": "assets/img/brands/flipkart.svg",
+        "color": "#2874F0"
+      }
+    ]
+  },
+  {
+    "id": "noise-buds-vs104",
+    "name": "Noise Buds VS104 TWS Earbuds",
+    "category": "Audio",
+    "brand": "Noise",
+    "price": 1299,
+    "mrp": 2999,
+    "rating": 4.2,
+    "ratingCount": 31204,
+    "badge": "Bestseller",
+    "badgeTone": "yellow",
+    "image": "assets/img/p/noise-buds-vs104.svg",
+    "short": "45-hour total playtime with Instacharge and quad mic.",
+    "description": "True wireless earbuds with up to 45 hours of total playtime, 10mm drivers, quad microphones for clear calls and Instacharge (10 min = 120 min).",
+    "goodFor": {
+      "title": "This product is good for these people",
+      "items": [
+        "Calls and meetings on the go",
+        "Gym and running — IPX5 sweat resistance",
+        "Anyone who wants long battery at a low price"
+      ]
+    },
+    "blocks": [
+      {
+        "type": "accordion",
+        "icon": "info",
+        "title": "Product details",
+        "items": [
+          {
+            "q": "Playtime",
+            "a": "Up to 45 hours total with the case; 10 min charge gives about 120 min."
+          },
+          {
+            "q": "Water resistance",
+            "a": "IPX5 — safe against sweat and light splashes, not for swimming."
+          }
+        ]
+      }
+    ],
+    "buttons": [
+      {
+        "platform": "Amazon",
+        "label": "Buy on Amazon",
+        "sub": "Free delivery",
+        "url": "https://www.amazon.in/",
+        "logo": "assets/img/brands/amazon.svg",
+        "color": "#FF9900"
+      },
+      {
+        "platform": "Flipkart",
+        "label": "Buy on Flipkart",
+        "sub": "F-Assured",
+        "url": "https://www.flipkart.com/",
+        "logo": "assets/img/brands/flipkart.svg",
+        "color": "#2874F0"
+      }
+    ]
+  },
+  {
+    "id": "cetaphil-gentle-cleanser",
+    "name": "Cetaphil Gentle Skin Cleanser · 250ml",
+    "category": "Skincare",
+    "brand": "Cetaphil",
+    "price": 349,
+    "mrp": 449,
+    "rating": 4.7,
+    "ratingCount": 12760,
+    "badge": "Top Pick",
+    "badgeTone": "blue",
+    "image": "assets/img/p/cetaphil-gentle-cleanser.svg",
+    "short": "A soap-free, fragrance-free cleanser for dry and sensitive skin.",
+    "description": "A gentle, soap-free cleanser that removes dirt and light makeup without stripping the skin. Fragrance-free and non-comedogenic — a classic for dry and sensitive skin.",
+    "goodFor": {
+      "title": "This product is good for these people",
+      "items": [
+        "Dry skin that feels tight after washing",
+        "Sensitive or reactive skin",
+        "People on acne medication (it won't dry you further)"
+      ]
+    },
+    "blocks": [
+      {
+        "type": "callout",
+        "tone": "blue",
+        "title": "Does this suit your skin type?",
+        "text": "Dry and sensitive skin: excellent match. Normal skin: gentle daily option. Very oily skin: you may prefer a foaming cleanser instead."
+      },
+      {
+        "type": "accordion",
+        "icon": "info",
+        "title": "Product details",
+        "items": [
+          {
+            "q": "How to use",
+            "a": "Apply to damp skin, massage gently, rinse or wipe off with a soft cloth. Use morning and night."
+          },
+          {
+            "q": "Key notes",
+            "a": "Soap-free, fragrance-free, non-comedogenic. Suitable for face and body."
+          }
+        ]
+      }
+    ],
+    "buttons": [
+      {
+        "platform": "Amazon",
+        "label": "Buy on Amazon",
+        "sub": "Subscribe & save available",
+        "url": "https://www.amazon.in/",
+        "logo": "assets/img/brands/amazon.svg",
+        "color": "#FF9900"
+      },
+      {
+        "platform": "Flipkart",
+        "label": "Buy on Flipkart",
+        "sub": "F-Assured",
+        "url": "https://www.flipkart.com/",
+        "logo": "assets/img/brands/flipkart.svg",
+        "color": "#2874F0"
+      }
+    ]
+  },
+  {
+    "id": "noise-colorfit-smartwatch",
+    "name": "Noise ColorFit Pulse Smartwatch",
+    "category": "Wearables",
+    "brand": "Noise",
+    "price": 1499,
+    "mrp": 3999,
+    "rating": 4.1,
+    "ratingCount": 20455,
+    "badge": "Trending",
+    "badgeTone": "orange",
+    "image": "assets/img/p/noise-colorfit-smartwatch.svg",
+    "short": "1.4-inch display, SpO2, heart rate and 7-day battery.",
+    "description": "A budget smartwatch with a 1.4-inch HD display, heart-rate and SpO2 tracking, 60+ sports modes and up to 7 days of battery life.",
+    "goodFor": {
+      "title": "This product is good for these people",
+      "items": [
+        "First-time smartwatch buyers",
+        "Basic fitness and step tracking",
+        "Notifications on the wrist without spending a lot"
+      ]
+    },
+    "blocks": [
+      {
+        "type": "accordion",
+        "icon": "info",
+        "title": "Product details",
+        "items": [
+          {
+            "q": "Battery",
+            "a": "Up to 7 days typical use; 2 hours to full charge."
+          },
+          {
+            "q": "Health tracking",
+            "a": "Heart rate, SpO2, sleep and 60+ sports modes. Not a medical device."
+          }
+        ]
+      }
+    ],
+    "buttons": [
+      {
+        "platform": "Amazon",
+        "label": "Buy on Amazon",
+        "sub": "Free delivery",
+        "url": "https://www.amazon.in/",
+        "logo": "assets/img/brands/amazon.svg",
+        "color": "#FF9900"
+      },
+      {
+        "platform": "Flipkart",
+        "label": "Buy on Flipkart",
+        "sub": "F-Assured",
+        "url": "https://www.flipkart.com/",
+        "logo": "assets/img/brands/flipkart.svg",
+        "color": "#2874F0"
+      }
+    ]
+  }
+]

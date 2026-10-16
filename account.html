@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Account — TruePick</title>
+<link rel="icon" href="assets/img/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+.prof{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:18px;display:flex;gap:14px;align-items:center}
+.av{width:56px;height:56px;border-radius:999px;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;font-size:20px}
+.prof b{font-size:17px;display:block}
+.prof small{color:var(--muted)}
+.stats{display:flex;gap:10px;margin:14px 0}
+.stat{flex:1;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:14px;text-align:center}
+.stat b{display:block;font-size:19px}
+.stat small{color:var(--muted);font-size:12px}
+.menu{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.menu a{display:flex;align-items:center;gap:12px;padding:15px 16px;border-bottom:1px solid var(--line);font-weight:600}
+.menu a:last-child{border-bottom:0}
+.menu a small{color:var(--muted);font-weight:500;font-size:12.5px;display:block}
+.menu a .go{margin-left:auto;color:var(--muted)}
+.badge-gold{background:var(--yellow);color:var(--ink);font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px}
+</style>
+</head>
+<body>
+<div id="tp-header"></div>
+<div id="tp-drawer"></div>
+
+<main>
+  <div class="page-h">
+    <div class="crumb"><a href="index.html">Home</a> / Account</div>
+    <h1>Your account</h1>
+    <p>This is the shopper view. Product management lives in the admin panel.</p>
+  </div>
+  <section class="section" style="max-width:640px">
+    <div class="prof">
+      <div class="av">PS</div>
+      <div><b>Guest shopper</b><small>Wishlist saved on this device</small></div>
+      <span class="badge-gold" style="margin-left:auto">TruePick Member</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><b id="s-wish">0</b><small>Wishlist</small></div>
+      <div class="stat"><b id="s-rate">0</b><small>Rated</small></div>
+      <div class="stat"><b id="s-cat">0</b><small>Categories</small></div>
+    </div>
+    <div class="menu">
+      <a href="wishlist.html">♡ <span>Wishlist<small>Your saved picks</small></span><span class="go">›</span></a>
+      <a href="blog.html">✍️ <span>Guides &amp; blog<small>Read or listen</small></span><span class="go">›</span></a>
+      <a href="about.html">ℹ️ <span>About us<small>Who we are</small></span><span class="go">›</span></a>
+      <a href="terms.html">📄 <span>Terms &amp; conditions<small>How the site works</small></span><span class="go">›</span></a>
+    </div>
+    <p style="color:var(--muted);font-size:13px;margin-top:14px">This is the shopper-facing storefront. Prices and picks are curated by hand.</p>
+  </section>
+</main>
+
+<div id="tp-footer"></div>
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/layout.js"></script>
+<script>
+TP.mountLayout('account');
+(async () => {
+  const products = await TP.api('products');
+  const rated = Object.keys(JSON.parse(localStorage.getItem('tp_myrating') || '{}')).length;
+  document.getElementById('s-wish').textContent = TP.wishlist.all().length;
+  document.getElementById('s-rate').textContent = rated;
+  document.getElementById('s-cat').textContent = new Set((products || []).map(p => p.category)).size;
+})();
+</script>
+</body>
+</html>

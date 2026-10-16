@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog &amp; guides — TruePick</title>
+<link rel="icon" href="assets/img/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<div id="tp-header"></div>
+<div id="tp-drawer"></div>
+
+<main>
+  <div class="page-h">
+    <div class="crumb"><a href="index.html">Home</a> / Blog</div>
+    <h1>Guides &amp; picks</h1>
+    <p>Short, honest reads — and you can listen to any of them.</p>
+  </div>
+  <section class="section"><div class="blog-grid" id="posts"></div></section>
+</main>
+
+<div id="tp-footer"></div>
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/layout.js"></script>
+<script>
+TP.mountLayout('blog');
+(async () => {
+  const posts = await TP.api('blogs');
+  document.getElementById('posts').innerHTML = (posts || []).map(b => `
+    <a class="post" href="blog-post.html?id=${encodeURIComponent(b.id)}">
+      <div class="cover"><img src="${TP.esc(b.cover)}" alt=""></div>
+      <div class="pb"><span class="meta">${TP.esc(b.date)} · ${TP.esc(b.author)}</span>
+        <h3>${TP.esc(b.title)}</h3><p>${TP.esc(b.excerpt)}</p>
+        <span style="color:var(--blue);font-weight:700;font-size:13.5px">Read &amp; listen →</span></div>
+    </a>`).join('');
+})();
+</script>
+</body>
+</html>

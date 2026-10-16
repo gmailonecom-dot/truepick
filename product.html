@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product — TruePick</title>
+<link rel="icon" href="assets/img/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<div id="tp-header"></div>
+<div id="tp-drawer"></div>
+
+<main><div class="pdp" id="pdp"></div></main>
+
+<div id="tp-footer"></div>
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/layout.js"></script>
+<script>
+TP.mountLayout('');
+const ICON = {
+  drop: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg>',
+  info: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5h.01"/></svg>',
+  check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 12.5l5 5 11-12"/></svg>'
+};
+const esc = TP.esc;
+
+function blockHTML(b) {
+  if (b.type === 'accordion') {
+    return `<div class="block"><div class="block-h"><span class="ic">${ICON[b.icon] || ICON.info}</span>
+        <div><h3>${esc(b.title)}</h3>${b.subtitle ? `<p>${esc(b.subtitle)}</p>` : ''}</div></div>
+      <div class="block-b">${b.items.map(it => `<div class="acc">
+        <button class="acc-q">${esc(it.q)}<span class="plus">+</span></button>
+        <div class="acc-a"><div class="in">${esc(it.a)}</div></div></div>`).join('')}</div></div>`;
+  }
+  if (b.type === 'callout') {
+    return `<div class="block"><div class="block-h"><span class="ic">${ICON.info}</span><div><h3>${esc(b.title)}</h3></div></div>
+      <div class="block-b"><div class="callout ${b.tone === 'blue' ? 'blue' : ''}">${ICON.check}<span>${esc(b.text)}</span></div></div></div>`;
+  }
+  if (b.type === 'pills') {
+    return `<div class="block"><div class="block-h"><span class="ic">${ICON.info}</span>
+        <div><h3>${esc(b.title)}</h3>${b.subtitle ? `<p>${esc(b.subtitle)}</p>` : ''}</div></div>
+      <div class="block-b"><div class="pill-list">${b.items.map(p =>
+        `<a class="pill alt" href="${esc(p.href || '#')}">${esc(p.label)}</a>`).join('')}</div></div></div>`;
+  }
+  return '';
+}
+
+function affiliate(b) {
+  return `<a class="aff" href="${esc(b.url)}" target="_blank" rel="nofollow sponsored noopener"
+      style="border-color:${esc(b.color)}33">
+    <span class="logo"><img src="${esc(b.logo || 'assets/img/brands/generic.svg')}" alt="${esc(b.platform)}"></span>
+    <span class="txt"><span>${esc(b.label)}</span>${b.sub ? `<small>${esc(b.sub)}</small>` : ''}</span>
+    <span class="go">→</span></a>`;
+}
+
+(async () => {
+  const products = await TP.api('products');
+  const id = new URLSearchParams(location.search).get('id');
+  const p = (products || []).find(x => x.id === id) || (products || [])[0];
+  const root = document.getElementById('pdp');
+  if (!p) { root.innerHTML = '<div class="empty"><p>Product not found. <a href="catalogue.html">Back to catalogue</a></p></div>'; return; }
+  document.title = p.name + ' — TruePick';
+
+  const off = TP.pct(p.mrp, p.price);
+  const gf = p.goodFor || {};
+  const myRate = JSON.parse(localStorage.getItem('tp_myrating') || '{}')[p.id] || 0;
+
+  root.innerHTML = `
+  <div class="crumb"><a href="index.html">Home</a> / <a href="catalogue.html">Catalogue</a> / ${esc(p.category)}</div>
+  <div class="pdp-top">
+    <div>
+      <div class="gallery">
+        <div class="main"><img id="mainImg" src="${esc(p.image)}" alt="${esc(p.name)}"></div>
+        <div class="thumbs">
+          <img class="on" src="${esc(p.image)}" alt="">
+          <img src="assets/img/banners/${esc((p.category || '').toLowerCase())}.svg" onerror="this.style.display='none'" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="pdp-info">
+      <span class="brandline">${esc(p.brand || '')} · ${esc(p.category)}</span>
+      <h1>${esc(p.name)}</h1>
+      <div class="stars"><span class="st">${TP.stars(p.rating)}</span><b>${p.rating}</b> · ${Number(p.ratingCount || 0).toLocaleString('en-IN')} ratings</div>
+      <div class="pdp-price"><b>${TP.inr(p.price)}</b>${off ? `<s>${TP.inr(p.mrp)}</s><span class="off">${off}% off</span>` : ''}</div>
+      <p class="pdp-desc">${esc(p.description || p.short || '')}</p>
+
+      <div class="trust">
+        <span>${ICON.check} Price checked across stores</span>
+        <span>${ICON.check} Links straight to the seller</span>
+        <span>${ICON.check} We may earn a small commission</span>
+      </div>
+
+      <h3 style="margin:16px 0 10px;font-size:15px">Buy it from</h3>
+      <div class="buy-row">${(p.buttons || []).map(affiliate).join('')}</div>
+
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-ghost" data-fav="${esc(p.id)}">♡ Save to wishlist</button>
+        <a class="btn btn-ghost" href="blog.html">Read the guide →</a>
+      </div>
+    </div>
+  </div>
+
+  ${gf.title ? `<div class="block" style="margin-top:22px"><div class="block-h"><span class="ic">${ICON.check}</span>
+      <div><h3>${esc(gf.title)}</h3>${gf.intro ? `<p>${esc(gf.intro)}</p>` : ''}</div></div>
+    <div class="block-b"><ul class="goodfor" style="list-style:none;padding:0;margin:0">
+      ${(gf.items || []).map(i => `<li><span class="tick">${ICON.check}</span><span>${esc(i)}</span></li>`).join('')}
+    </ul></div></div>` : ''}
+
+  ${(p.blocks || []).map(blockHTML).join('')}
+
+  <div class="block"><div class="block-h"><span class="ic">${ICON.check}</span>
+      <div><h3>Rate this product</h3><p>Your rating is stored on this device.</p></div></div>
+    <div class="block-b"><div class="rate-box">
+      <div class="rate-stars" id="rateStars">${[1,2,3,4,5].map(n => `<button data-r="${n}" class="${myRate >= n ? 'on' : ''}">★</button>`).join('')}</div>
+      <span class="txt" id="rateTxt">${myRate ? 'You rated it ' + myRate + '/5' : 'Tap to rate'}</span>
+    </div></div></div>
+
+  <div class="section" style="padding:0;margin-top:26px">
+    <div class="sec-h"><h2>More picks</h2><a href="catalogue.html">See all →</a></div>
+    <div class="grid" id="more"></div>
+  </div>`;
+
+  // gallery thumbs
+  root.querySelectorAll('.thumbs img').forEach(t => t.addEventListener('click', () => {
+    root.querySelectorAll('.thumbs img').forEach(x => x.classList.remove('on'));
+    t.classList.add('on');
+    document.getElementById('mainImg').src = t.src;
+  }));
+
+  // accordions (the plus-icon blocks)
+  root.querySelectorAll('.acc-q').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('open')));
+
+  // ratings
+  root.querySelectorAll('#rateStars button').forEach(b => b.addEventListener('click', () => {
+    const n = +b.dataset.r;
+    const all = JSON.parse(localStorage.getItem('tp_myrating') || '{}'); all[p.id] = n;
+    localStorage.setItem('tp_myrating', JSON.stringify(all));
+    root.querySelectorAll('#rateStars button').forEach(x => x.classList.toggle('on', +x.dataset.r <= n));
+    document.getElementById('rateTxt').textContent = 'You rated it ' + n + '/5 — thank you!';
+    TP.toast('Thanks for rating ' + n + '/5');
+  }));
+
+  TP.bindFavs(root);
+  TP.renderGrid(document.getElementById('more'), (products || []).filter(x => x.id !== p.id && x.category === p.category).concat((products || []).filter(x => x.category !== p.category)).slice(0, 4));
+})();
+</script>
+</body>
+</html>

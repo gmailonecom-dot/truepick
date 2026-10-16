@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid slice">
+<defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F76605"/><stop offset="1" stop-color="#0B45A8"/></linearGradient></defs>
+<rect width="1200" height="520" fill="url(#b)"/>
+<circle cx="1010" cy="120" r="190" fill="#ffffff" opacity="0.08"/>
+<circle cx="1120" cy="430" r="150" fill="#FFC93C" opacity="0.14"/>
+<path d="M840 520 L1000 180 L1160 520 Z" fill="#ffffff" opacity="0.06"/>
+<text x="80" y="470" font-family="'JetBrains Mono',monospace" font-size="22" letter-spacing="6" fill="#ffffff" opacity="0.55">TRUEPICK · SKINCARE</text>
+</svg>

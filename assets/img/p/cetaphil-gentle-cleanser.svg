@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#EAF1FC"/><stop offset="1" stop-color="#0B45A8" stop-opacity="0.16"/></linearGradient></defs>
+<rect width="800" height="800" fill="url(#g)"/>
+<circle cx="400" cy="330" r="150" fill="#0B45A8" opacity="0.12"/>
+<circle cx="400" cy="330" r="96" fill="#0B45A8" opacity="0.18"/>
+<text x="400" y="345" text-anchor="middle" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="44" font-weight="800" fill="#0B45A8" opacity="0.9">Cetaphil</text>
+<text x="400" y="560" text-anchor="middle" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="40" font-weight="800" fill="#0E1726"><tspan x="400" dy="0">Cetaphil Gentle Skin</tspan><tspan x="400" dy="46">Cleanser · 250ml</tspan></text>
+<text x="400" y="650" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="20" letter-spacing="4" fill="#64708A">SKINCARE</text>
+</svg>

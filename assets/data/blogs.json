@@ -1,0 +1,45 @@
+[
+  {
+    "id": "how-to-find-skin-type",
+    "title": "How to find your skin type in 2 minutes",
+    "excerpt": "Oily, dry, combination or sensitive? A tissue and one hour is all you need to know which products will actually suit you.",
+    "cover": "assets/img/banners/skincare.svg",
+    "date": "2026-09-28",
+    "author": "TruePick Studio",
+    "body": [
+      "Most skincare disappoints people for one simple reason: it was never meant for their skin type. Before you buy another serum, spend two minutes working out what your skin actually is.",
+      "Wash your face with a mild cleanser and pat it dry. Wait one hour without applying anything. Now press a clean tissue against your forehead, nose, cheeks and chin. If it comes away greasy all over, you have oily skin. If it stays dry and your face feels tight, you have dry skin. If only the T-zone is oily, that is combination skin — the most common type of all.",
+      "Sensitive skin is a little different. It is less about oil and more about how your skin reacts. If new products, heat or sun leave you red, stinging or itchy, treat your skin as sensitive. Always patch-test a new product on your inner arm for 24 hours first.",
+      "Once you know your type, shopping gets easy. Oily and combination skin usually loves light, water-based serums with niacinamide. Dry skin wants ceramides and richer creams. Sensitive skin does best with fragrance-free, minimal-ingredient formulas.",
+      "And if you are unsure, or you have persistent acne, rosacea or pigmentation, a dermatologist will settle it in one short visit. That ten-minute consultation often saves months of guessing — and money spent on the wrong bottles."
+    ]
+  },
+  {
+    "id": "iphone-15-worth-it",
+    "title": "Is the iPhone 15 still worth it?",
+    "excerpt": "The standard iPhone finally got USB-C and a 48MP camera. Here's who should buy it — and who should wait.",
+    "cover": "assets/img/banners/electronics.svg",
+    "date": "2026-09-14",
+    "author": "TruePick Studio",
+    "body": [
+      "The iPhone 15 is the model most people should actually consider. It inherits the 48MP main camera and the Dynamic Island from last year's Pro, and it finally moves to USB-C.",
+      "Buy it if you shoot a lot of photos and video, you want four to five years of smooth updates, and you are already comfortable inside Apple's ecosystem. The A16 Bionic chip is more than enough for years of everyday use.",
+      "Skip it if you are deep in Android, you want a 120Hz screen, or you simply need the biggest display for the money — the Plus or an Android flagship may serve you better.",
+      "As always, we compare live prices across Amazon and Flipkart before you buy, so you pay the lowest honest price."
+    ]
+  },
+  {
+    "id": "budget-earbuds-guide",
+    "title": "Budget earbuds: what actually matters",
+    "excerpt": "Battery, fit and call quality beat fancy marketing numbers. A short guide to buying well under ₹2,000.",
+    "cover": "assets/img/banners/studio.svg",
+    "date": "2026-08-30",
+    "author": "TruePick Studio",
+    "body": [
+      "Under two thousand rupees, three things decide whether you will be happy with a pair of earbuds: battery life, fit, and microphone quality for calls.",
+      "Battery first. Look for the total playtime with the case, not just the buds. Anything above 30 hours is genuinely convenient. A quick-charge feature that gives you a couple of hours from ten minutes is worth more than a slightly bigger number.",
+      "Fit second. A secure, comfortable fit changes the sound more than any equaliser. Most buds ship with three ear-tip sizes — try all of them before deciding.",
+      "Calls third. If you take meetings on the move, a quad-mic setup with basic noise handling matters far more than the driver size printed on the box."
+    ]
+  }
+]

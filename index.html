@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TruePick — picked products, honest prices</title>
+<meta name="description" content="TruePick hand-picks products, compares prices across Amazon and Flipkart, and sends you straight to the store to buy.">
+<link rel="icon" href="assets/img/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<div id="tp-header"></div>
+<div id="tp-drawer"></div>
+
+<main>
+  <section class="banners">
+    <div class="rail" id="rail"></div>
+  </section>
+
+  <section class="cats">
+    <div class="sec-h"><h2>Shop by category</h2><a href="catalogue.html">See all →</a></div>
+    <div class="chips" id="cats"></div>
+  </section>
+
+  <section class="section">
+    <div class="sec-h"><h2>Picked for you</h2><a href="catalogue.html">Browse catalogue →</a></div>
+    <div class="grid" id="picked"></div>
+  </section>
+
+  <section class="section">
+    <div class="sec-h"><h2>From the blog</h2><a href="blog.html">All guides →</a></div>
+    <div class="blog-grid" id="home-blog"></div>
+  </section>
+</main>
+
+<div id="tp-footer"></div>
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/layout.js"></script>
+<script>
+TP.mountLayout('home');
+(async () => {
+  const [banners, products, blogs] = await Promise.all([TP.api('banners'), TP.api('products'), TP.api('blogs')]);
+
+  document.getElementById('rail').innerHTML = (Array.isArray(banners) ? banners : []).map(TP.banner).join('');
+
+  const cats = [...new Set((products || []).map(p => p.category))];
+  document.getElementById('cats').innerHTML = cats.map(c =>
+    `<a class="chip" href="catalogue.html?cat=${encodeURIComponent(c)}"><span class="ic">${TP.esc(c[0])}</span>${TP.esc(c)}</a>`).join('');
+
+  TP.renderGrid(document.getElementById('picked'), (products || []).slice(0, 8));
+
+  document.getElementById('home-blog').innerHTML = (blogs || []).slice(0, 2).map(b => `
+    <a class="post" href="blog-post.html?id=${encodeURIComponent(b.id)}">
+      <div class="cover"><img src="${TP.esc(b.cover)}" alt=""></div>
+      <div class="pb"><span class="meta">${TP.esc(b.date)} · ${TP.esc(b.author)}</span>
+        <h3>${TP.esc(b.title)}</h3><p>${TP.esc(b.excerpt)}</p>
+        <span class="cta" style="color:var(--blue);font-weight:700;font-size:13.5px">Read &amp; listen →</span></div>
+    </a>`).join('');
+})();
+</script>
+</body>
+</html>
