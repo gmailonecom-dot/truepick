@@ -10,7 +10,7 @@
     "ratingCount": 18422,
     "badge": "Trending",
     "badgeTone": "orange",
-    "image": "assets/img/p/minimalist-niacinamide-10.svg",
+    "image": "/assets/img/p/minimalist-niacinamide-10.svg",
     "short": "A lightweight 10% niacinamide serum that controls oil and fades marks.",
     "description": "A water-light serum built around 10% niacinamide and 1% zinc. It helps regulate oil production, visibly reduces the look of old acne marks, and strengthens the skin barrier with daily use. Fragrance-free and non-comedogenic.",
     "goodFor": {
@@ -131,7 +131,7 @@
     "ratingCount": 2413,
     "badge": "Top Pick",
     "badgeTone": "blue",
-    "image": "assets/img/p/iphone-15-128.svg",
+    "image": "/assets/img/p/iphone-15-128.svg",
     "short": "A16 Bionic, 48MP main camera, USB-C and Dynamic Island.",
     "description": "The iPhone 15 brings the Dynamic Island, a 48MP main camera with 2x telephoto, and USB-C to the standard line-up. Powered by the A16 Bionic chip, it handles everything from 4K video to heavy games without a stutter.",
     "goodFor": {
@@ -217,7 +217,7 @@
     "ratingCount": 52190,
     "badge": "Bestseller",
     "badgeTone": "yellow",
-    "image": "assets/img/p/boat-rockerz-550.svg",
+    "image": "/assets/img/p/boat-rockerz-550.svg",
     "short": "20-hour battery, 50mm drivers and a punchy bass signature.",
     "description": "Lightweight over-ear headphones with 50mm dynamic drivers, up to 20 hours of playback and a physical bass switch. Bluetooth 5.0 with dual pairing and a built-in mic for calls.",
     "goodFor": {
@@ -279,7 +279,7 @@
     "ratingCount": 3987,
     "badge": "Top Pick",
     "badgeTone": "blue",
-    "image": "assets/img/p/lenovo-ideapad-slim-3.svg",
+    "image": "/assets/img/p/lenovo-ideapad-slim-3.svg",
     "short": "16GB RAM, 512GB SSD and a 15.6-inch Full HD display.",
     "description": "A dependable everyday laptop for work and study — Ryzen 5 processor, 16GB RAM, 512GB SSD and a 15.6-inch Full HD anti-glare screen, in a slim 1.6kg body.",
     "goodFor": {
@@ -341,7 +341,7 @@
     "ratingCount": 8602,
     "badge": "Feed Pick",
     "badgeTone": "",
-    "image": "assets/img/p/allen-solly-cotton-tee.svg",
+    "image": "/assets/img/p/allen-solly-cotton-tee.svg",
     "short": "100% cotton, regular fit, holds shape wash after wash.",
     "description": "A everyday crew-neck tee in 100% combed cotton. Regular fit with a ribbed neckline that doesn't sag, pre-shrunk so it keeps its size.",
     "goodFor": {
@@ -399,7 +399,7 @@
     "ratingCount": 31204,
     "badge": "Bestseller",
     "badgeTone": "yellow",
-    "image": "assets/img/p/noise-buds-vs104.svg",
+    "image": "/assets/img/p/noise-buds-vs104.svg",
     "short": "45-hour total playtime with Instacharge and quad mic.",
     "description": "True wireless earbuds with up to 45 hours of total playtime, 10mm drivers, quad microphones for clear calls and Instacharge (10 min = 120 min).",
     "goodFor": {
@@ -457,7 +457,7 @@
     "ratingCount": 12760,
     "badge": "Top Pick",
     "badgeTone": "blue",
-    "image": "assets/img/p/cetaphil-gentle-cleanser.svg",
+    "image": "/assets/img/p/cetaphil-gentle-cleanser.svg",
     "short": "A soap-free, fragrance-free cleanser for dry and sensitive skin.",
     "description": "A gentle, soap-free cleanser that removes dirt and light makeup without stripping the skin. Fragrance-free and non-comedogenic — a classic for dry and sensitive skin.",
     "goodFor": {
@@ -521,7 +521,7 @@
     "ratingCount": 20455,
     "badge": "Trending",
     "badgeTone": "orange",
-    "image": "assets/img/p/noise-colorfit-smartwatch.svg",
+    "image": "/assets/img/p/noise-colorfit-smartwatch.svg",
     "short": "1.4-inch display, SpO2, heart rate and 7-day battery.",
     "description": "A budget smartwatch with a 1.4-inch HD display, heart-rate and SpO2 tracking, 60+ sports modes and up to 7 days of battery life.",
     "goodFor": {

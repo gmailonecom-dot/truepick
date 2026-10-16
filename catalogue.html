@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Catalogue — TruePick</title>
-<meta name="description" content="Browse every product TruePick has picked, filter by category, and jump straight to the store.">
+<meta name="description" content="Browse every product TruePick has picked, filter by category, price, rating, brand and discount, and jump straight to the store.">
 <link rel="icon" href="assets/img/logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,13 +29,38 @@
   <section class="section">
     <div class="sec-h">
       <h2 id="catLabel">All products</h2>
-      <select id="sort" class="btn btn-ghost" style="margin-left:auto;padding:9px 14px;font-weight:700">
-        <option value="featured">Sort: Featured</option>
-        <option value="low">Price: low to high</option>
-        <option value="high">Price: high to low</option>
-        <option value="rating">Top rated</option>
-      </select>
+      <div class="toolbar">
+        <button class="btn btn-ghost btn-sm" id="fBtn" aria-expanded="false" aria-controls="fpanel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M6 12h12M10 18h4"/></svg>
+          Filters<span class="fcount" id="fCount" hidden>0</span>
+        </button>
+        <select id="sort" class="btn btn-ghost" aria-label="Sort products">
+          <option value="featured">Sort: Featured</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+          <option value="rating">Top rated</option>
+          <option value="discount">Biggest discount</option>
+        </select>
+      </div>
     </div>
+
+    <div class="fpanel" id="fpanel" hidden>
+      <div class="fgroup">
+        <h4>Price (₹)</h4>
+        <div class="frow">
+          <input type="number" id="pmin" placeholder="Min" min="0" inputmode="numeric" aria-label="Minimum price">
+          <span class="dash">–</span>
+          <input type="number" id="pmax" placeholder="Max" min="0" inputmode="numeric" aria-label="Maximum price">
+        </div>
+        <div class="quick" id="qPrice"></div>
+      </div>
+      <div class="fgroup"><h4>Minimum rating</h4><div class="quick" id="qRating"></div></div>
+      <div class="fgroup"><h4>Brand</h4><div class="quick" id="qBrand"></div></div>
+      <div class="fgroup"><h4>Discount</h4><div class="quick" id="qOffer"></div></div>
+      <button class="btn btn-ghost btn-block" id="clearAll">Clear all filters</button>
+    </div>
+
+    <div class="active" id="active"></div>
     <div class="grid" id="grid"></div>
   </section>
 </main>
@@ -49,28 +74,112 @@ TP.mountLayout('catalogue');
 (async () => {
   const products = await TP.api('products');
   const params = new URLSearchParams(location.search);
-  let active = params.get('cat') || 'All';
   const cats = ['All', ...[...new Set((products || []).map(p => p.category))]];
+  const brands = [...new Set((products || []).map(p => p.brand).filter(Boolean))];
 
-  const paintFilters = () => {
-    document.getElementById('filter').innerHTML = cats.map(c =>
-      `<a class="chip${c === active ? ' on' : ''}" href="catalogue.html${c === 'All' ? '' : '?cat=' + encodeURIComponent(c)}"
-          style="${c === active ? 'border-color:var(--blue);box-shadow:var(--shadow-sm)' : ''}">
-         <span class="ic">${TP.catIcon(c)}</span>${TP.esc(c)}</a>`).join('');
+  const S = { cat: params.get('cat') || 'All', min: null, max: null, rating: 0, brands: new Set(), offer: 0 };
+
+  const mkQuick = (el, opts, get, set) => {
+    el.innerHTML = opts.map(o => `<button class="qbtn" data-v="${o.v}">${o.t}</button>`).join('');
+    const paint = () => el.querySelectorAll('.qbtn').forEach(b => b.classList.toggle('on', String(get()) === String(b.dataset.v)));
+    el.querySelectorAll('.qbtn').forEach(b => b.addEventListener('click', () => { set(b.dataset.v); paint(); run(); }));
+    paint(); return paint;
   };
-  const paint = () => {
-    let list = active === 'All' ? products.slice() : products.filter(p => p.category === active);
+
+  // category chips
+  document.getElementById('filter').innerHTML = cats.map(c =>
+    `<a class="chip${c === S.cat ? ' on' : ''}" href="catalogue.html${c === 'All' ? '' : '?cat=' + encodeURIComponent(c)}"
+        style="${c === S.cat ? 'border-color:var(--blue);box-shadow:var(--shadow-sm)' : ''}">
+       <span class="ic">${c === 'All' ? TP.ic.tag : TP.catIcon(c)}</span>${TP.esc(c)}</a>`).join('');
+
+  const priceOpts = [
+    { t: 'Under ₹500', v: '0-500' }, { t: '₹500–2,000', v: '500-2000' },
+    { t: '₹2,000–20,000', v: '2000-20000' }, { t: '₹20,000+', v: '20000-' }
+  ];
+  const paintPrice = mkQuick(document.getElementById('qPrice'), priceOpts, () => (S.min === null && S.max === null) ? '' : `${S.min ?? ''}-${S.max ?? ''}`,
+    v => { const [a, b] = v.split('-'); S.min = a === '' ? null : +a; S.max = b === '' ? null : +b;
+           document.getElementById('pmin').value = S.min ?? ''; document.getElementById('pmax').value = S.max ?? ''; });
+
+  mkQuick(document.getElementById('qRating'), [{ t: 'Any', v: 0 }, { t: '4★ & up', v: 4 }, { t: '4.5★ & up', v: 4.5 }],
+    () => S.rating, v => { S.rating = +v; });
+
+  mkQuick(document.getElementById('qBrand'), brands.map(b => ({ t: b, v: b })), () => '', v => {
+    S.brands.has(v) ? S.brands.delete(v) : S.brands.add(v);
+    document.querySelectorAll('#qBrand .qbtn').forEach(b => b.classList.toggle('on', S.brands.has(b.dataset.v)));
+  });
+
+  mkQuick(document.getElementById('qOffer'), [{ t: 'Any', v: 0 }, { t: '10%+', v: 10 }, { t: '30%+', v: 30 }, { t: '50%+', v: 50 }],
+    () => S.offer, v => { S.offer = +v; });
+
+  const pmin = document.getElementById('pmin'), pmax = document.getElementById('pmax');
+  [pmin, pmax].forEach(i => i.addEventListener('input', () => {
+    S.min = pmin.value === '' ? null : +pmin.value;
+    S.max = pmax.value === '' ? null : +pmax.value;
+    paintPrice(); run();
+  }));
+
+  document.getElementById('fBtn').addEventListener('click', e => {
+    const p = document.getElementById('fpanel');
+    p.hidden = !p.hidden;
+    e.currentTarget.setAttribute('aria-expanded', String(!p.hidden));
+  });
+
+  document.getElementById('clearAll').addEventListener('click', () => {
+    S.min = S.max = null; S.rating = 0; S.offer = 0; S.brands.clear();
+    pmin.value = pmax.value = '';
+    document.querySelectorAll('.qbtn').forEach(b => b.classList.remove('on'));
+    document.querySelector('#qRating .qbtn[data-v="0"]').classList.add('on');
+    document.querySelector('#qOffer .qbtn[data-v="0"]').classList.add('on');
+    run();
+  });
+
+  function activeCount() {
+    let n = 0;
+    if (S.min !== null || S.max !== null) n++;
+    if (S.rating) n++; if (S.offer) n++; n += S.brands.size;
+    return n;
+  }
+
+  function chipsHTML() {
+    const out = [];
+    const rm = (label, fn) => out.push(`<span class="achip">${label}<button data-rm="${out.length}" aria-label="Remove">×</button></span>`);
+    const fns = [];
+    if (S.min !== null || S.max !== null) { rm(`₹${S.min ?? 0} – ${S.max ? '₹' + S.max : 'any'}`, null); fns.push(() => { S.min = S.max = null; pmin.value = pmax.value = ''; paintPrice(); }); }
+    if (S.rating) { rm(`${S.rating}★ & up`, null); fns.push(() => { S.rating = 0; document.querySelectorAll('#qRating .qbtn').forEach(b => b.classList.toggle('on', b.dataset.v === '0')); }); }
+    if (S.offer) { rm(`${S.offer}%+ off`, null); fns.push(() => { S.offer = 0; document.querySelectorAll('#qOffer .qbtn').forEach(b => b.classList.toggle('on', b.dataset.v === '0')); }); }
+    S.brands.forEach(b => { rm(b, null); fns.push(() => { S.brands.delete(b); document.querySelectorAll('#qBrand .qbtn').forEach(x => x.classList.toggle('on', S.brands.has(x.dataset.v))); }); });
+    const el = document.getElementById('active');
+    el.innerHTML = out.length ? out.join('') + `<button class="btn btn-ghost btn-sm" id="clr2">Clear all</button>` : '';
+    el.querySelectorAll('[data-rm]').forEach((b, i) => b.addEventListener('click', () => { fns[i](); run(); }));
+    const c2 = document.getElementById('clr2'); if (c2) c2.addEventListener('click', () => document.getElementById('clearAll').click());
+  }
+
+  function run() {
+    let list = (products || []).slice();
+    if (S.cat !== 'All') list = list.filter(p => p.category === S.cat);
+    if (S.min !== null) list = list.filter(p => p.price >= S.min);
+    if (S.max !== null) list = list.filter(p => p.price <= S.max);
+    if (S.rating) list = list.filter(p => p.rating >= S.rating);
+    if (S.brands.size) list = list.filter(p => S.brands.has(p.brand));
+    if (S.offer) list = list.filter(p => TP.pct(p.mrp, p.price) >= S.offer);
+
     const s = document.getElementById('sort').value;
     if (s === 'low') list.sort((a, b) => a.price - b.price);
     if (s === 'high') list.sort((a, b) => b.price - a.price);
     if (s === 'rating') list.sort((a, b) => b.rating - a.rating);
-    document.getElementById('catLabel').textContent = active === 'All' ? 'All products' : active;
-    document.getElementById('title').textContent = active === 'All' ? 'Catalogue' : active;
-    document.getElementById('count').textContent = list.length + ' item' + (list.length === 1 ? '' : 's') + ' · prices compared across stores';
+    if (s === 'discount') list.sort((a, b) => TP.pct(b.mrp, b.price) - TP.pct(a.mrp, a.price));
+
+    const n = activeCount();
+    const fc = document.getElementById('fCount'); fc.textContent = n; fc.hidden = !n;
+    document.getElementById('catLabel').textContent = S.cat === 'All' ? 'All products' : S.cat;
+    document.getElementById('title').textContent = S.cat === 'All' ? 'Catalogue' : S.cat;
+    document.getElementById('count').textContent = `${list.length} item${list.length === 1 ? '' : 's'}${n ? ` · ${n} filter${n === 1 ? '' : 's'} on` : ''} · prices compared across stores`;
+    chipsHTML();
     TP.renderGrid(document.getElementById('grid'), list);
-  };
-  paintFilters(); paint();
-  document.getElementById('sort').addEventListener('change', paint);
+  }
+
+  document.getElementById('sort').addEventListener('change', run);
+  run();
 })();
 </script>
 </body>

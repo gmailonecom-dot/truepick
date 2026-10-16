@@ -5,7 +5,7 @@
     "title": "Flat 40% OFF on Electronics",
     "subtitle": "Phones · Laptops · Audio — picked and price-checked",
     "cta": "See the picks",
-    "image": "assets/img/banners/electronics.svg",
+    "image": "/assets/img/banners/electronics.svg",
     "productId": "iphone-15-128"
   },
   {
@@ -14,7 +14,7 @@
     "title": "New Skincare Collection",
     "subtitle": "Serums, cleansers & tools for every skin type",
     "cta": "Shop skincare",
-    "image": "assets/img/banners/skincare.svg",
+    "image": "/assets/img/banners/skincare.svg",
     "productId": "minimalist-niacinamide-10"
   },
   {
@@ -23,7 +23,7 @@
     "title": "Top Picks Unboxed",
     "subtitle": "2:14 · TruePick Studio — what's actually worth buying",
     "cta": "Read the blog",
-    "image": "assets/img/banners/studio.svg",
+    "image": "/assets/img/banners/studio.svg",
     "link": "blog.html",
     "external": false
   }
