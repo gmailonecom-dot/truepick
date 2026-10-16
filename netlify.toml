@@ -1,4 +1,8 @@
 [build]
+  # TruePick is a static site + Netlify Functions: there is NO build step.
+  # Set explicitly so Netlify never auto-runs "npm run build" (which does not exist)
+  # and fails the deploy.
+  command = 'echo "TruePick: static site, no build step"'
   publish = "."
 
 [[headers]]
