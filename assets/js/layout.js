@@ -11,7 +11,7 @@
     user: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>'
   };
   const topNav = [['index.html', 'Home', 'home'], ['catalogue.html', 'Catalogue', 'catalogue'], ['blog.html', 'Blog', 'blog'], ['about.html', 'About us', 'about'], ['terms.html', 'Terms', 'terms']];
-  const tabs = [['index.html', 'Home', 'home'], ['catalogue.html', 'Catalogue', 'catalogue'], ['wishlist.html', 'Wishlist', 'wishlist'], ['account.html', 'Account', 'account']];
+  const tabs = [['index.html', 'Home', 'home', 'home'], ['catalogue.html', 'Catalogue', 'catalogue', 'grid'], ['wishlist.html', 'Wishlist', 'wishlist', 'heart'], ['account.html', 'Account', 'account', 'user']];
 
   const header = `
   <div class="hdr"><div class="hdr-in">
@@ -28,12 +28,6 @@
   <aside class="drawer" aria-label="Menu">
     <div class="drawer-h"><img src="assets/img/logo.svg" alt="TruePick"><button class="icon-btn" data-close aria-label="Close">${ic.close}</button></div>
     <nav>
-      <div class="lbl">Shop</div>
-      <a href="index.html">${ic.home} Home</a>
-      <a href="catalogue.html">${ic.grid} Catalogue</a>
-      <a href="wishlist.html">${ic.heart} Wishlist <span class="dot" data-wish-count style="display:none">0</span></a>
-      <a href="account.html">${ic.user} Account</a>
-      <div class="sep"></div>
       <div class="lbl">Explore</div>
       <a href="blog.html">Blog &amp; guides</a>
       <a href="about.html">About us</a>
@@ -63,7 +57,7 @@
     </div>
   </div></footer>`;
 
-  const tabbar = `<nav class="tabs">${tabs.map(t => `<a href="${t[0]}" data-nav="${t[2]}">${ic[t[2]]}<span>${t[1]}</span><span class="cnt" data-wish-count style="display:none">0</span></a>`).join('')}</nav>`;
+  const tabbar = `<nav class="tabs">${tabs.map(t => `<a href="${t[0]}" data-nav="${t[2]}">${ic[t[3]]}<span>${t[1]}</span><span class="cnt" data-wish-count style="display:none">0</span></a>`).join('')}</nav>`;
 
   window.TP = window.TP || {};
   window.TP.mountLayout = function (active) {
