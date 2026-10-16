@@ -15,11 +15,12 @@
 
   const header = `
   <div class="hdr"><div class="hdr-in">
-    <button class="icon-btn" data-menu aria-label="Open menu">${ic.menu}</button>
-    <button class="icon-btn" data-search aria-label="Search">${ic.search}</button>
-    <div class="search"><input type="search" placeholder="Search products, brands…" aria-label="Search"><span>${ic.search}</span><div class="search-results"></div></div>
-    <nav class="nav-desk">${topNav.map(n => `<a href="${n[0]}" data-nav="${n[2]}">${n[1]}</a>`).join('')}</nav>
     <a class="brand" href="index.html" aria-label="TruePick home"><img src="assets/img/logo.svg" alt="TruePick"></a>
+    <span class="hdr-gap"></span>
+    <nav class="nav-desk">${topNav.map(n => `<a href="${n[0]}" data-nav="${n[2]}">${n[1]}</a>`).join('')}</nav>
+    <div class="search"><input type="search" placeholder="Search products, brands…" aria-label="Search"><span>${ic.search}</span><div class="search-results"></div></div>
+    <button class="icon-btn" data-search aria-label="Search">${ic.search}</button>
+    <button class="icon-btn" data-menu aria-label="Open menu">${ic.menu}</button>
   </div></div>`;
 
   const drawer = `

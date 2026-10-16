@@ -334,3 +334,9 @@ footer.site .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:6px;pad
 .callout svg{width:22px;height:22px;flex:0 0 22px;margin-top:1px}
 .goodfor li .tick svg{width:17px;height:17px}
 .pill svg{width:14px;height:14px}
+
+/* header: logo on the LEFT (was on the right); menu + search moved to the right */
+.brand{margin-left:0}
+.hdr-gap{flex:1 1 0;min-width:0}
+.hdr-in .search{flex:0 1 360px}
+@media(min-width:760px){ .hdr .nav-desk{margin-left:0} .hdr-in .search{flex:0 1 380px} }
