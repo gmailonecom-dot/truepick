@@ -49,7 +49,7 @@ TP.mountLayout('home');
 
   const cats = [...new Set((products || []).map(p => p.category))];
   document.getElementById('cats').innerHTML = cats.map(c =>
-    `<a class="chip" href="catalogue.html?cat=${encodeURIComponent(c)}"><span class="ic">${TP.esc(c[0])}</span>${TP.esc(c)}</a>`).join('');
+    `<a class="chip" href="catalogue.html?cat=${encodeURIComponent(c)}"><span class="ic">${TP.catIcon(c)}</span>${TP.esc(c)}</a>`).join('');
 
   TP.renderGrid(document.getElementById('picked'), (products || []).slice(0, 8));
 

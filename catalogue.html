@@ -56,7 +56,7 @@ TP.mountLayout('catalogue');
     document.getElementById('filter').innerHTML = cats.map(c =>
       `<a class="chip${c === active ? ' on' : ''}" href="catalogue.html${c === 'All' ? '' : '?cat=' + encodeURIComponent(c)}"
           style="${c === active ? 'border-color:var(--blue);box-shadow:var(--shadow-sm)' : ''}">
-         <span class="ic">${TP.esc(c[0])}</span>${TP.esc(c)}</a>`).join('');
+         <span class="ic">${TP.catIcon(c)}</span>${TP.esc(c)}</a>`).join('');
   };
   const paint = () => {
     let list = active === 'All' ? products.slice() : products.filter(p => p.category === active);

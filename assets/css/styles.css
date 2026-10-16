@@ -340,3 +340,13 @@ footer.site .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:6px;pad
 .hdr-gap{flex:1 1 0;min-width:0}
 .hdr-in .search{flex:0 1 360px}
 @media(min-width:760px){ .hdr .nav-desk{margin-left:0} .hdr-in .search{flex:0 1 380px} }
+
+/* icon sizing + accordion control */
+.chip .ic svg{width:22px;height:22px}
+.btn svg{width:18px;height:18px;flex:0 0 18px}
+.empty .ic{color:var(--blue)}
+.empty .ic svg{width:46px;height:46px}
+.acc-q .plus svg{width:15px;height:15px}
+.menu a svg{width:20px;height:20px;flex:0 0 20px;color:var(--blue)}
+.side a.nav svg{width:18px;height:18px;flex:0 0 18px}
+.trust svg{width:16px;height:16px}

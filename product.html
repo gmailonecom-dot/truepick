@@ -28,13 +28,14 @@ const ICON = {
   check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 12.5l5 5 11-12"/></svg>'
 };
 const esc = TP.esc;
+const PLUS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 6v12M6 12h12"/></svg>';
 
 function blockHTML(b) {
   if (b.type === 'accordion') {
     return `<div class="block"><div class="block-h"><span class="ic">${ICON[b.icon] || ICON.info}</span>
         <div><h3>${esc(b.title)}</h3>${b.subtitle ? `<p>${esc(b.subtitle)}</p>` : ''}</div></div>
       <div class="block-b">${b.items.map(it => `<div class="acc">
-        <button class="acc-q">${esc(it.q)}<span class="plus">+</span></button>
+        <button class="acc-q">${esc(it.q)}<span class="plus">${PLUS}</span></button>
         <div class="acc-a"><div class="in">${esc(it.a)}</div></div></div>`).join('')}</div></div>`;
   }
   if (b.type === 'callout') {
@@ -76,10 +77,7 @@ function affiliate(b) {
     <div>
       <div class="gallery">
         <div class="main"><img id="mainImg" src="${esc(p.image)}" alt="${esc(p.name)}"></div>
-        <div class="thumbs">
-          <img class="on" src="${esc(p.image)}" alt="">
-          <img src="assets/img/banners/${esc((p.category || '').toLowerCase())}.svg" onerror="this.style.display='none'" alt="">
-        </div>
+
       </div>
     </div>
     <div class="pdp-info">
@@ -99,7 +97,7 @@ function affiliate(b) {
       <div class="buy-row">${(p.buttons || []).map(affiliate).join('')}</div>
 
       <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
-        <button class="btn btn-ghost" data-fav="${esc(p.id)}">♡ Save to wishlist</button>
+        <button class="btn btn-ghost" data-fav="${esc(p.id)}">${TP.ic.heart} Save to wishlist</button>
         <a class="btn btn-ghost" href="blog.html">Read the guide →</a>
       </div>
     </div>

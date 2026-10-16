@@ -1,10 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0" stop-color="#EAF1FC"/><stop offset="1" stop-color="#0B45A8" stop-opacity="0.16"/></linearGradient></defs>
-<rect width="800" height="800" fill="url(#g)"/>
-<circle cx="400" cy="330" r="150" fill="#0B45A8" opacity="0.12"/>
-<circle cx="400" cy="330" r="96" fill="#0B45A8" opacity="0.18"/>
-<text x="400" y="345" text-anchor="middle" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="44" font-weight="800" fill="#0B45A8" opacity="0.9">Cetaphil</text>
-<text x="400" y="560" text-anchor="middle" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="40" font-weight="800" fill="#0E1726"><tspan x="400" dy="0">Cetaphil Gentle Skin</tspan><tspan x="400" dy="46">Cleanser · 250ml</tspan></text>
-<text x="400" y="650" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="20" letter-spacing="4" fill="#64708A">SKINCARE</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4F7FC"/><stop offset="1" stop-color="#E4EBF7"/></linearGradient>
+  <radialGradient id="sh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#0E1726" stop-opacity=".16"/><stop offset="1" stop-color="#0E1726" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="800" height="800" fill="url(#bg)"/>
+<ellipse cx="400" cy="640" rx="190" ry="34" fill="url(#sh)"/>
+
+<g>
+  <path d="M392 196 h96 a14 14 0 0 1 14 14 v16 a14 14 0 0 1-14 14 h-96 z" fill="#0B45A8"/>
+  <rect x="386" y="196" width="26" height="72" rx="10" fill="#0B45A8"/>
+  <rect x="378" y="238" width="44" height="42" rx="8" fill="#D9E3F4"/>
+  <rect x="330" y="276" width="140" height="292" rx="26" fill="#FFFFFF" stroke="#DCE7FA" stroke-width="3"/>
+  <rect x="330" y="276" width="140" height="292" rx="26" fill="url(#gl2)" opacity=".5"/>
+  <rect x="356" y="336" width="88" height="150" rx="12" fill="#F4F7FC" stroke="#DCE7FA" stroke-width="2.5"/>
+  <rect x="372" y="362" width="56" height="9" rx="4.5" fill="#0B45A8"/>
+  <rect x="372" y="382" width="40" height="7" rx="3.5" fill="#C7D2E4"/>
+  <rect x="372" y="402" width="56" height="7" rx="3.5" fill="#C7D2E4"/>
+  <rect x="372" y="424" width="30" height="7" rx="3.5" fill="#F76605"/>
+  <path d="M348 292 q-8 60 0 130" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" fill="none" opacity=".7"/>
+</g>
+<defs><linearGradient id="gl2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
 </svg>

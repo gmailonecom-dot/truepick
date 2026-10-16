@@ -1,10 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0" stop-color="#0E1726"/><stop offset="1" stop-color="#F76605" stop-opacity="0.9"/></linearGradient></defs>
-<rect width="800" height="800" fill="url(#g)"/>
-<circle cx="400" cy="330" r="150" fill="#F76605" opacity="0.25"/>
-<circle cx="400" cy="330" r="96" fill="#F76605" opacity="0.4"/>
-<text x="400" y="345" text-anchor="middle" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="44" font-weight="800" fill="#FFFFFF" opacity="0.9">boAt</text>
-<text x="400" y="560" text-anchor="middle" font-family="'Plus Jakarta Sans',Arial,sans-serif" font-size="40" font-weight="800" fill="#FFFFFF"><tspan x="400" dy="0">boAt Rockerz 550</tspan><tspan x="400" dy="46">Over-Ear Headphones</tspan></text>
-<text x="400" y="650" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="20" letter-spacing="4" fill="#C7D2E4">AUDIO</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4F7FC"/><stop offset="1" stop-color="#E4EBF7"/></linearGradient>
+  <radialGradient id="sh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#0E1726" stop-opacity=".16"/><stop offset="1" stop-color="#0E1726" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="800" height="800" fill="url(#bg)"/>
+<ellipse cx="400" cy="640" rx="190" ry="34" fill="url(#sh)"/>
+
+<g>
+  <path d="M262 392 a138 138 0 0 1 276 0" fill="none" stroke="#0E1726" stroke-width="30" stroke-linecap="round"/>
+  <path d="M276 384 a124 124 0 0 1 248 0" fill="none" stroke="#39445E" stroke-width="10" stroke-linecap="round"/>
+  <rect x="222" y="360" width="96" height="152" rx="40" fill="#0E1726"/>
+  <rect x="482" y="360" width="96" height="152" rx="40" fill="#0E1726"/>
+  <rect x="238" y="378" width="64" height="116" rx="30" fill="#1E5AD1"/>
+  <rect x="498" y="378" width="64" height="116" rx="30" fill="#1E5AD1"/>
+  <ellipse cx="270" cy="436" rx="18" ry="34" fill="#0B45A8"/>
+  <ellipse cx="530" cy="436" rx="18" ry="34" fill="#0B45A8"/>
+  <path d="M242 392 q-6 40 0 84" stroke="#5B8AE8" stroke-width="8" stroke-linecap="round" fill="none" opacity=".8"/>
+</g>
 </svg>

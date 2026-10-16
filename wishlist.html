@@ -37,7 +37,7 @@ TP.mountLayout('wishlist');
   const list = (products || []).filter(p => ids.includes(p.id));
   const el = document.getElementById('grid');
   if (!list.length) {
-    el.innerHTML = `<div class="empty" style="grid-column:1/-1"><div class="ic">♡</div>
+    el.innerHTML = `<div class="empty" style="grid-column:1/-1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 1 0-7.8 7.8l8.8 8.8 8.8-8.8a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
       <p>Nothing saved yet.</p>
       <p style="margin-top:12px"><a class="btn btn-primary" href="catalogue.html">Browse the catalogue</a></p></div>`;
     return;
