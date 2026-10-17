@@ -118,6 +118,20 @@
         "logo": "assets/img/brands/flipkart.svg",
         "color": "#2874F0"
       }
+    ],
+    "videos": [
+      {
+        "title": "30-day review — did it fade the marks?",
+        "url": "https://www.youtube.com/watch?v=PLACEHOLDER",
+        "channel": "Skincare Reviews",
+        "rating": 4.5
+      },
+      {
+        "title": "Oily skin routine with niacinamide",
+        "url": "https://www.youtube.com/watch?v=PLACEHOLDER",
+        "channel": "Skincare Reviews",
+        "rating": 4
+      }
     ]
   },
   {
@@ -755,6 +769,14 @@
         "logo": "/assets/img/brands/flipkart.svg",
         "color": "#2874F0"
       }
+    ],
+    "videos": [
+      {
+        "title": "Air fryer unboxing & first cook",
+        "url": "https://www.youtube.com/watch?v=PLACEHOLDER",
+        "channel": "Kitchen Tested",
+        "rating": 4.5
+      }
     ]
   },
   {
@@ -1195,6 +1217,14 @@
         "url": "https://www.flipkart.com/",
         "logo": "/assets/img/brands/flipkart.svg",
         "color": "#2874F0"
+      }
+    ],
+    "videos": [
+      {
+        "title": "4K picture test and smart features",
+        "url": "https://www.youtube.com/watch?v=PLACEHOLDER",
+        "channel": "TV Reviews India",
+        "rating": 4
       }
     ]
   }

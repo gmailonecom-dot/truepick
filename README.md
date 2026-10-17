@@ -21,6 +21,8 @@ browse it.
   - a **callout** ("Does this suit your skin type?"),
   - **alternatives / pills** ("If it doesn't suit you, try these instead"),
   - a **product-details** accordion, and a **rate-this-product** widget.
+- **YouTube video reviews** — a product can embed YouTube review videos (they play from
+  YouTube's servers); the page shows how many there are and the average reviewer rating.
 - **Blog** — posts with a **"Listen to this article"** button (reads the post aloud).
 - **Wishlist**, **Account**, **About us**, **Terms & conditions**.
 

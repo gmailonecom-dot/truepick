@@ -165,6 +165,7 @@ window.TP = (() => {
     shirt: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M9 3.5 4 6l-1.5 5L6 12.5 7.5 11v9.5h9V11l1.5 1.5 3.5-1.5L20 6l-5-2.5a3 3 0 0 1-6 0z"/></svg>',
     watch: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="6.5" y="6" width="11" height="12" rx="3.4"/><path d="M9 6V3.5h6V6M9 18v2.5h6V18" stroke-linecap="round"/></svg>',
     tag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3.5 12.4 12 3.9h7.6V11.5L11.1 19.9a1.6 1.6 0 0 1-2.3 0l-5.3-5.2a1.6 1.6 0 0 1 0-2.3z"/><circle cx="16.3" cy="7.7" r="1.3"/></svg>',
+    play: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="2.6" y="4.8" width="18.8" height="14.4" rx="4.2"/><path d="M10.2 8.6 15.8 12l-5.6 3.4z"/></svg>',
     kitchen: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M4 10.5h16v6.5a3.5 3.5 0 0 1-3.5 3.5h-9A3.5 3.5 0 0 1 4 17z"/><path d="M2.8 10.5h18.4M9 7.2h6M12 3.6v3.6" stroke-linecap="round"/></svg>',
     appliance: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2.6"/><circle cx="12" cy="14.2" r="3.9"/><path d="M8.4 6.2h.01" stroke-linecap="round"/></svg>',
     cable: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v4.4M15 3v4.4"/><rect x="6.6" y="7.4" width="10.8" height="6.4" rx="2.2"/><path d="M12 13.8V21"/></svg>',
@@ -180,5 +181,48 @@ window.TP = (() => {
   const CAT_ICON = { 'Phones':'phone','iPads':'phone','Laptops':'laptop','Audio':'headphones','Skincare':'droplet','Clothing':'shirt','Wearables':'watch','Kitchen':'kitchen','Home Appliances':'appliance','Mobile Accessories':'cable','TV & Accessories':'tv' };
   const catIcon = c => ic[CAT_ICON[c] || 'tag'];
 
-  return { ic, catIcon, api, inr, pct, esc, stars, wishlist, chrome, card, renderGrid, bindFavs, banner, speak, toast, paintTabCount };
+
+  /* ---------- YouTube video reviews ---------- */
+  function ytId(url) {
+    const s = String(url || '');
+    const m = s.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/))([A-Za-z0-9_-]{11})/);
+    return m ? m[1] : '';
+  }
+  const ytThumb = id => 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg';
+  const ytEmbed = id => 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1';
+
+  /* A "facade": we show the thumbnail and only load YouTube's player when the
+     visitor taps play — so the page stays fast and nothing is sent to YouTube
+     until they ask for it. */
+  function videoBlock(videos) {
+    const list = (videos || []).filter(v => ytId(v.url));
+    if (!list.length) return '';
+    const rated = list.filter(v => Number(v.rating) > 0);
+    const avg = rated.length ? rated.reduce((s, v) => s + Number(v.rating), 0) / rated.length : 0;
+    const cards = list.map(v => {
+      const id = ytId(v.url);
+      return `<button class="video" data-yt="${id}" type="button" aria-label="Play: ${esc(v.title || 'video review')}">
+        <span class="vthumb"><img src="${ytThumb(id)}" alt="" loading="lazy" onerror="this.remove()"><span class="vplay">${ic.play}</span></span>
+        <span class="vmeta"><b>${esc(v.title || 'Video review')}</b>
+          <small>${esc(v.channel || 'YouTube')}${Number(v.rating) > 0 ? ' · ' + stars(v.rating) + ' ' + v.rating + '/5' : ''}</small></span>
+      </button>`;
+    }).join('');
+    return `<div class="block"><div class="block-h"><span class="ic">${ic.play}</span>
+      <div><h3>Video reviews</h3><p>${list.length} video${list.length === 1 ? '' : 's'} on YouTube${avg ? ' · reviewers rate it ' + avg.toFixed(1) + '/5 on average' : ''}</p></div></div>
+      <div class="block-b"><div class="vgrid">${cards}</div></div></div>`;
+  }
+  function bindVideos(root) {
+    (root || document).querySelectorAll('[data-yt]').forEach(btn => btn.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.className = 'vframe';
+      f.src = ytEmbed(btn.dataset.yt);
+      f.title = 'YouTube video player';
+      f.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+      f.setAttribute('allowfullscreen', '');
+      f.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+      btn.replaceWith(f);
+    }));
+  }
+
+  return { ic, catIcon, api, ytId, videoBlock, bindVideos, inr, pct, esc, stars, wishlist, chrome, card, renderGrid, bindFavs, banner, speak, toast, paintTabCount };
 })();

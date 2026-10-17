@@ -110,6 +110,8 @@ function affiliate(b) {
       ${(gf.items || []).map(i => `<li><span class="tick">${ICON.check}</span><span>${esc(i)}</span></li>`).join('')}
     </ul></div></div>` : ''}
 
+  ${TP.videoBlock(p.videos)}
+
   ${(p.blocks || []).map(blockHTML).join('')}
 
   <div class="block"><div class="block-h"><span class="ic">${ICON.check}</span>
@@ -145,6 +147,7 @@ function affiliate(b) {
   }));
 
   TP.bindFavs(root);
+  TP.bindVideos(root);
   TP.renderGrid(document.getElementById('more'), (products || []).filter(x => x.id !== p.id && x.category === p.category).concat((products || []).filter(x => x.category !== p.category)).slice(0, 4));
 })();
 </script>

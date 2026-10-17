@@ -37,6 +37,11 @@ for (const p of products) {
   if (!p.image) problems.push(`[HIGH]  ${id}: no image`);
   else if (!exists(path.join(ROOT, p.image.replace(/^\//, '')))) problems.push(`[HIGH]  ${id}: image file missing -> ${p.image}`);
   if (!Array.isArray(p.buttons) || !p.buttons.length) problems.push(`[MED]   ${id}: no affiliate buy buttons`);
+  (p.videos || []).forEach((v, i) => {
+    if (!/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/))[A-Za-z0-9_-]{11}/.test(v.url || ''))
+      problems.push(`[MED]   ${id}: video ${i + 1} is not a valid YouTube link (${v.url})`);
+    if (v.rating && (Number(v.rating) < 0 || Number(v.rating) > 5)) problems.push(`[MED]   ${id}: video ${i + 1} rating must be 0–5`);
+  });
   (p.buttons || []).forEach((b, i) => {
     if (!/^https?:\/\//.test(b.url || '')) problems.push(`[MED]   ${id}: button ${i + 1} has no valid link (${b.url})`);
     if (b.logo && !exists(path.join(ROOT, b.logo.replace(/^\//, '')))) problems.push(`[MED]   ${id}: button ${i + 1} logo missing -> ${b.logo}`);
