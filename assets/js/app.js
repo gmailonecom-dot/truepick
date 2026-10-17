@@ -7,10 +7,15 @@ window.TP = (() => {
   const write = (k, v) => localStorage.setItem(k, JSON.stringify(v));
 
   async function api(name) {
-    try {
-      const r = await fetch('/api/' + name, { headers: { 'accept': 'application/json' } });
-      if (r.ok) { const j = await r.json(); if (j && !j.error) return j; }
-    } catch (e) { /* no functions — static mode */ }
+    // The private build talks to the Netlify Function; the public build is pure static,
+    // so it reads the bundled JSON directly and never fires a doomed /api request.
+    const useApi = !(window.TP_CONFIG && window.TP_CONFIG.api === false);
+    if (useApi) {
+      try {
+        const r = await fetch('/api/' + name, { headers: { 'accept': 'application/json' } });
+        if (r.ok) { const j = await r.json(); if (j && !j.error) return j; }
+      } catch (e) { /* backend unavailable — fall through to the bundled copy */ }
+    }
     try { const r = await fetch('/assets/data/' + name + '.json'); if (r.ok) return await r.json(); } catch (e) {}
     return [];
   }
@@ -160,6 +165,10 @@ window.TP = (() => {
     shirt: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M9 3.5 4 6l-1.5 5L6 12.5 7.5 11v9.5h9V11l1.5 1.5 3.5-1.5L20 6l-5-2.5a3 3 0 0 1-6 0z"/></svg>',
     watch: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="6.5" y="6" width="11" height="12" rx="3.4"/><path d="M9 6V3.5h6V6M9 18v2.5h6V18" stroke-linecap="round"/></svg>',
     tag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3.5 12.4 12 3.9h7.6V11.5L11.1 19.9a1.6 1.6 0 0 1-2.3 0l-5.3-5.2a1.6 1.6 0 0 1 0-2.3z"/><circle cx="16.3" cy="7.7" r="1.3"/></svg>',
+    kitchen: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M4 10.5h16v6.5a3.5 3.5 0 0 1-3.5 3.5h-9A3.5 3.5 0 0 1 4 17z"/><path d="M2.8 10.5h18.4M9 7.2h6M12 3.6v3.6" stroke-linecap="round"/></svg>',
+    appliance: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2.6"/><circle cx="12" cy="14.2" r="3.9"/><path d="M8.4 6.2h.01" stroke-linecap="round"/></svg>',
+    cable: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v4.4M15 3v4.4"/><rect x="6.6" y="7.4" width="10.8" height="6.4" rx="2.2"/><path d="M12 13.8V21"/></svg>',
+    tv: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="2.8" y="4.2" width="18.4" height="12.2" rx="2.2"/><path d="M8.4 20.4h7.2" stroke-linecap="round"/></svg>',
     box: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3.5 7.5 12 3.5l8.5 4v9L12 20.5l-8.5-4z"/><path d="M3.5 7.5 12 11.5l8.5-4M12 11.5v9"/></svg>',
     image: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2.4"/><circle cx="8.5" cy="10" r="1.7"/><path d="m4 17 4.8-4.6L13 16l2.6-2.3L20 17.5"/></svg>',
     pen: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L20 8a2.8 2.8 0 0 0-4-4L4 16z"/><path d="M14.5 5.5 18.5 9.5"/></svg>',
@@ -168,7 +177,7 @@ window.TP = (() => {
     logout: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 20H5.5A1.5 1.5 0 0 1 4 18.5v-13A1.5 1.5 0 0 1 5.5 4H10"/><path d="M15 8l4 4-4 4M19 12H9"/></svg>',
     plus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 6v12M6 12h12"/></svg>',
   };
-  const CAT_ICON = { 'Phones':'phone','iPads':'phone','Laptops':'laptop','Audio':'headphones','Skincare':'droplet','Clothing':'shirt','Wearables':'watch' };
+  const CAT_ICON = { 'Phones':'phone','iPads':'phone','Laptops':'laptop','Audio':'headphones','Skincare':'droplet','Clothing':'shirt','Wearables':'watch','Kitchen':'kitchen','Home Appliances':'appliance','Mobile Accessories':'cable','TV & Accessories':'tv' };
   const catIcon = c => ic[CAT_ICON[c] || 'tag'];
 
   return { ic, catIcon, api, inr, pct, esc, stars, wishlist, chrome, card, renderGrid, bindFavs, banner, speak, toast, paintTabCount };

@@ -567,5 +567,635 @@
         "color": "#2874F0"
       }
     ]
+  },
+  {
+    "id": "philips-electric-chopper",
+    "name": "Philips Electric Chopper 500W",
+    "category": "Kitchen",
+    "brand": "Philips",
+    "price": 2499,
+    "mrp": 3495,
+    "rating": 4.4,
+    "ratingCount": 5120,
+    "badge": "Top Pick",
+    "badgeTone": "blue",
+    "image": "/assets/img/p/philips-electric-chopper.svg",
+    "short": "500W motor, 4-blade chopper for onion, ginger and herbs in seconds.",
+    "description": "A compact 500W electric chopper with a 4-blade stainless steel cutter. Chops onions, garlic, ginger, herbs and dry masala in seconds, and the bowl and blades are dishwasher-safe.",
+    "goodFor": {
+      "title": "This product is good for these people",
+      "intro": "Worth buying if:",
+      "items": [
+        "Daily cooking where chopping takes the most time",
+        "Small kitchens — it takes very little counter space",
+        "Anyone who wants to avoid tears while chopping onions"
+      ]
+    },
+    "blocks": [
+      {
+        "type": "accordion",
+        "icon": "info",
+        "title": "Product details",
+        "items": [
+          {
+            "q": "Capacity & power",
+            "a": "500W motor, 900ml bowl. Good for a family of 3–5."
+          },
+          {
+            "q": "Cleaning",
+            "a": "Bowl and blades are removable and dishwasher-safe. Wipe the motor base only."
+          },
+          {
+            "q": "Safety",
+            "a": "The motor runs only when the lid is locked in place."
+          }
+        ]
+      }
+    ],
+    "buttons": [
+      {
+        "platform": "Amazon",
+        "label": "Buy on Amazon",
+        "sub": "Free delivery · easy returns",
+        "url": "https://www.amazon.in/",
+        "logo": "/assets/img/brands/amazon.svg",
+        "color": "#FF9900"
+      },
+      {
+        "platform": "Flipkart",
+        "label": "Buy on Flipkart",
+        "sub": "F-Assured · fastest delivery",
+        "url": "https://www.flipkart.com/",
+        "logo": "/assets/img/brands/flipkart.svg",
+        "color": "#2874F0"
+      }
+    ]
+  },
+  {
+    "id": "bajaj-mixer-grinder-500w",
+    "name": "Bajaj Rex Mixer Grinder 500W",
+    "category": "Kitchen",
+    "brand": "Bajaj",
+    "price": 2999,
+    "mrp": 4299,
+    "rating": 4.3,
+    "ratingCount": 22140,
+    "badge": "Bestseller",
+    "badgeTone": "yellow",
+    "image": "/assets/img/p/bajaj-mixer-grinder-500w.svg",
+    "short": "Three stainless-steel jars, 500W motor — the everyday Indian mixer.",
+    "description": "A 500W mixer grinder with three stainless steel jars for dry grinding, wet grinding and chutney. Sturdy motor with overload protection, built for daily Indian cooking.",
+    "goodFor": {
+      "title": "This product is good for these people",
+      "intro": "Worth buying if:",
+      "items": [
+        "Everyday grinding of masala, batter and chutney",
+        "Families who cook fresh at home daily",
+        "Buyers who want a long-lasting, easy-to-service model"
+      ]
+    },
+    "blocks": [
+      {
+        "type": "accordion",
+        "icon": "info",
+        "title": "Product details",
+        "items": [
+          {
+            "q": "What's in the box",
+            "a": "1.5L wet jar, 1L dry jar, 0.3L chutney jar, and the motor unit."
+          },
+          {
+            "q": "Power & warranty",
+            "a": "500W motor, 2-year product warranty."
+          },
+          {
+            "q": "Care",
+            "a": "Wash jars with warm water; do not immerse the motor base."
+          }
+        ]
+      }
+    ],
+    "buttons": [
+      {
+        "platform": "Amazon",
+        "label": "Buy on Amazon",
+        "sub": "Free delivery · easy returns",
+        "url": "https://www.amazon.in/",
+        "logo": "/assets/img/brands/amazon.svg",
+        "color": "#FF9900"
+      },
+      {
+        "platform": "Flipkart",
+        "label": "Buy on Flipkart",
+        "sub": "F-Assured · fastest delivery",
+        "url": "https://www.flipkart.com/",
+        "logo": "/assets/img/brands/flipkart.svg",
+        "color": "#2874F0"
+      }
+    ]
+  },
+  {
+    "id": "instant-vortex-air-fryer-4l",
+    "name": "Instant Vortex Air Fryer 4L",
+    "category": "Kitchen",
+    "brand": "Instant",
+    "price": 6499,
+    "mrp": 9999,
+    "rating": 4.6,
+    "ratingCount": 8740,
+    "badge": "Trending",
+    "badgeTone": "orange",
+    "image": "/assets/img/p/instant-vortex-air-fryer-4l.svg",
+    "short": "Fry with up to 95% less oil — 4-litre basket for a family.",
+    "description": "A 4-litre air fryer with one-touch presets for fries, chicken, fish, vegetables and reheating. Cooks with hot air so you use far less oil, and the basket is non-stick and dishwasher-safe.",
+    "goodFor": {
+      "title": "This product is good for these people",
+      "intro": "Worth buying if:",
+      "items": [
+        "Anyone trying to cut oil without giving up fried food",
+        "Families of 2–4 (4L basket)",
+        "Quick weeknight dinners and reheating"
+      ]
+    },
+    "blocks": [
+      {
+        "type": "accordion",
+        "icon": "info",
+        "title": "Product details",
+        "items": [
+          {
+            "q": "Capacity",
+            "a": "4 litres — about 600g of fries in one go."
+          },
+          {
+            "q": "Power",
+            "a": "1500W. Preheat takes about 3 minutes."
+          },
+          {
+            "q": "Cleaning",
+            "a": "Non-stick basket and tray are dishwasher-safe."
+          }
+        ]
+      }
+    ],
+    "buttons": [
+      {
+        "platform": "Amazon",
+        "label": "Buy on Amazon",
+        "sub": "Free delivery · easy returns",
+        "url": "https://www.amazon.in/",
+        "logo": "/assets/img/brands/amazon.svg",
+        "color": "#FF9900"
+      },
+      {
+        "platform": "Flipkart",
+        "label": "Buy on Flipkart",
+        "sub": "F-Assured · fastest delivery",
+        "url": "https://www.flipkart.com/",
+        "logo": "/assets/img/brands/flipkart.svg",
+        "color": "#2874F0"
+      }
+    ]
+  },
+  {
+    "id": "samsung-fridge-183l",
+    "name": "Samsung 183L Single Door Refrigerator",
+    "category": "Home Appliances",
+    "brand": "Samsung",
+    "price": 14990,
+    "mrp": 19990,
+    "rating": 4.5,
+    "ratingCount": 15320,
+    "badge": "Top Pick",
+    "badgeTone": "blue",
+    "image": "/assets/img/p/samsung-fridge-183l.svg",
+    "short": "183L single door with digital inverter compressor and 5-star rating.",
+    "description": "A 183-litre single-door refrigerator with a digital inverter compressor, 5-star energy rating and a large vegetable box. Runs quietly and keeps food fresh through long power cuts.",
+    "goodFor": {
+      "title": "This product is good for these people",
+      "intro": "Worth buying if:",
+      "items": [
+        "Small families and bachelors",
+        "Anyone who wants low electricity bills",
+        "Homes where power cuts are common"
+      ]
+    },
+    "blocks": [
+      {
+        "type": "accordion",
+        "icon": "info",
+        "title": "Product details",
+        "items": [
+          {
+            "q": "Capacity & rating",
+            "a": "183 litres, 5-star BEE rating. Suitable for 2–3 people."
+          },
+          {
+            "q": "Compressor",
+            "a": "Digital inverter compressor with a 10-year warranty."
+          },
+          {
+            "q": "Dimensions",
+            "a": "Approx. 58 × 63 × 125 cm. Measure your space before buying."
+          }
+        ]
+      }
+    ],
+    "buttons": [
+      {
+        "platform": "Amazon",
+        "label": "Buy on Amazon",
+        "sub": "Free delivery · easy returns",
+        "url": "https://www.amazon.in/",
+        "logo": "/assets/img/brands/amazon.svg",
+        "color": "#FF9900"
+      },
+      {
+        "platform": "Flipkart",
+        "label": "Buy on Flipkart",
+        "sub": "F-Assured · fastest delivery",
+        "url": "https://www.flipkart.com/",
+        "logo": "/assets/img/brands/flipkart.svg",
+        "color": "#2874F0"
+      }
+    ]
+  },
+  {
+    "id": "lg-washing-machine-7kg",
+    "name": "LG 7kg Fully Automatic Washing Machine",
+    "category": "Home Appliances",
+    "brand": "LG",
+    "price": 15490,
+    "mrp": 21990,
+    "rating": 4.6,
+    "ratingCount": 20140,
+    "badge": "Bestseller",
+    "badgeTone": "yellow",
+    "image": "/assets/img/p/lg-washing-machine-7kg.svg",
+    "short": "7kg fully automatic top load with smart inverter motor.",
+    "description": "A 7kg fully-automatic top-load washing machine with an inverter direct-drive motor, multiple wash programmes and a turbo drum for a stronger wash.",
+    "goodFor": {
+      "title": "This product is good for these people",
+      "intro": "Worth buying if:",
+      "items": [
+        "Families of 3–5 people",
+        "Anyone upgrading from a semi-automatic machine",
+        "Buyers who want low running noise and long life"
+      ]
+    },
+    "blocks": [
+      {
+        "type": "accordion",
+        "icon": "info",
+        "title": "Product details",
+        "items": [
+          {
+            "q": "Capacity",
+            "a": "7kg — good for a family of 3 to 5."
+          },
+          {
+            "q": "Motor & warranty",
+            "a": "Inverter direct-drive motor, 10-year motor warranty."
+          },
+          {
+            "q": "Installation",
+            "a": "Free installation is usually included; check the listing for your PIN code."
+          }
+        ]
+      }
+    ],
+    "buttons": [
+      {
+        "platform": "Amazon",
+        "label": "Buy on Amazon",
+        "sub": "Free delivery · easy returns",
+        "url": "https://www.amazon.in/",
+        "logo": "/assets/img/brands/amazon.svg",
+        "color": "#FF9900"
+      },
+      {
+        "platform": "Flipkart",
+        "label": "Buy on Flipkart",
+        "sub": "F-Assured · fastest delivery",
+        "url": "https://www.flipkart.com/",
+        "logo": "/assets/img/brands/flipkart.svg",
+        "color": "#2874F0"
+      }
+    ]
+  },
+  {
+    "id": "silicone-phone-cover",
+    "name": "Silicone Phone Cover (all models)",
+    "category": "Mobile Accessories",
+    "brand": "TruePick",
+    "price": 299,
+    "mrp": 799,
+    "rating": 4.2,
+    "ratingCount": 31200,
+    "badge": "Feed Pick",
+    "badgeTone": "",
+    "image": "/assets/img/p/silicone-phone-cover.svg",
+    "short": "Soft-touch silicone, raised camera lip and a grippy matte finish.",
+    "description": "A soft-touch silicone case with a raised lip around the camera and screen, precise cut-outs and a matte finish that resists fingerprints. Available for most popular phone models.",
+    "goodFor": {
+      "title": "This product is good for these people",
+      "intro": "Worth buying if:",
+      "items": [
+        "Protecting a new phone from everyday drops",
+        "Anyone who finds hard cases slippery",
+        "Gifting — cheap, useful and always fits"
+      ]
+    },
+    "blocks": [
+      {
+        "type": "accordion",
+        "icon": "info",
+        "title": "Product details",
+        "items": [
+          {
+            "q": "Models available",
+            "a": "iPhone, Samsung Galaxy, Redmi, Realme, OnePlus and more — pick your model on the store page."
+          },
+          {
+            "q": "Protection",
+            "a": "Raised camera and screen lip; soft inner lining."
+          },
+          {
+            "q": "Care",
+            "a": "Wipe with a damp cloth. Avoid alcohol-based cleaners."
+          }
+        ]
+      }
+    ],
+    "buttons": [
+      {
+        "platform": "Amazon",
+        "label": "Buy on Amazon",
+        "sub": "Free delivery · easy returns",
+        "url": "https://www.amazon.in/",
+        "logo": "/assets/img/brands/amazon.svg",
+        "color": "#FF9900"
+      },
+      {
+        "platform": "Flipkart",
+        "label": "Buy on Flipkart",
+        "sub": "F-Assured · fastest delivery",
+        "url": "https://www.flipkart.com/",
+        "logo": "/assets/img/brands/flipkart.svg",
+        "color": "#2874F0"
+      }
+    ]
+  },
+  {
+    "id": "65w-fast-charger",
+    "name": "65W GaN Fast Charger (USB-C)",
+    "category": "Mobile Accessories",
+    "brand": "TruePick",
+    "price": 1299,
+    "mrp": 2499,
+    "rating": 4.5,
+    "ratingCount": 9640,
+    "badge": "Top Pick",
+    "badgeTone": "blue",
+    "image": "/assets/img/p/65w-fast-charger.svg",
+    "short": "One charger for phone, tablet and laptop — 65W GaN, compact.",
+    "description": "A compact 65W GaN charger with USB-C Power Delivery. Charges a phone in under an hour, and is powerful enough for many thin laptops and tablets. One charger replaces three.",
+    "goodFor": {
+      "title": "This product is good for these people",
+      "intro": "Worth buying if:",
+      "items": [
+        "Travelling light with one charger",
+        "Fast-charging a modern phone",
+        "Charging a USB-C laptop in a pinch"
+      ]
+    },
+    "blocks": [
+      {
+        "type": "accordion",
+        "icon": "info",
+        "title": "Product details",
+        "items": [
+          {
+            "q": "Power & ports",
+            "a": "65W total, USB-C PD 3.0. Cable sold separately."
+          },
+          {
+            "q": "Compatibility",
+            "a": "Works with iPhone, Android, iPad and most USB-C laptops."
+          },
+          {
+            "q": "Safety",
+            "a": "Over-current, over-voltage and over-heat protection built in."
+          }
+        ]
+      }
+    ],
+    "buttons": [
+      {
+        "platform": "Amazon",
+        "label": "Buy on Amazon",
+        "sub": "Free delivery · easy returns",
+        "url": "https://www.amazon.in/",
+        "logo": "/assets/img/brands/amazon.svg",
+        "color": "#FF9900"
+      },
+      {
+        "platform": "Flipkart",
+        "label": "Buy on Flipkart",
+        "sub": "F-Assured · fastest delivery",
+        "url": "https://www.flipkart.com/",
+        "logo": "/assets/img/brands/flipkart.svg",
+        "color": "#2874F0"
+      }
+    ]
+  },
+  {
+    "id": "power-bank-20000",
+    "name": "20,000mAh Power Bank (22.5W)",
+    "category": "Mobile Accessories",
+    "brand": "TruePick",
+    "price": 1799,
+    "mrp": 2999,
+    "rating": 4.4,
+    "ratingCount": 18220,
+    "badge": "Trending",
+    "badgeTone": "orange",
+    "image": "/assets/img/p/power-bank-20000.svg",
+    "short": "Charges a phone 3–4 times; 22.5W fast output and USB-C in/out.",
+    "description": "A 20,000mAh power bank with 22.5W fast charging, dual output and USB-C input/output. Enough for three to four full phone charges, with a four-dot battery indicator.",
+    "goodFor": {
+      "title": "This product is good for these people",
+      "intro": "Worth buying if:",
+      "items": [
+        "Long journeys, treks and power cuts",
+        "Anyone who is away from a plug all day",
+        "Charging two devices at once"
+      ]
+    },
+    "blocks": [
+      {
+        "type": "accordion",
+        "icon": "info",
+        "title": "Product details",
+        "items": [
+          {
+            "q": "Capacity",
+            "a": "20,000mAh — roughly 3–4 phone charges."
+          },
+          {
+            "q": "Output",
+            "a": "22.5W max, two USB-A and one USB-C. Pass-through charging supported."
+          },
+          {
+            "q": "Air travel",
+            "a": "Within the usual 100Wh cabin limit, so it is allowed in hand baggage."
+          }
+        ]
+      }
+    ],
+    "buttons": [
+      {
+        "platform": "Amazon",
+        "label": "Buy on Amazon",
+        "sub": "Free delivery · easy returns",
+        "url": "https://www.amazon.in/",
+        "logo": "/assets/img/brands/amazon.svg",
+        "color": "#FF9900"
+      },
+      {
+        "platform": "Flipkart",
+        "label": "Buy on Flipkart",
+        "sub": "F-Assured · fastest delivery",
+        "url": "https://www.flipkart.com/",
+        "logo": "/assets/img/brands/flipkart.svg",
+        "color": "#2874F0"
+      }
+    ]
+  },
+  {
+    "id": "tv-cover-55",
+    "name": "55-inch LED TV Cover (waterproof)",
+    "category": "TV & Accessories",
+    "brand": "TruePick",
+    "price": 499,
+    "mrp": 1299,
+    "rating": 4.1,
+    "ratingCount": 7410,
+    "badge": "Feed Pick",
+    "badgeTone": "",
+    "image": "/assets/img/p/tv-cover-55.svg",
+    "short": "Dust-proof, water-resistant cover that keeps your TV clean when unused.",
+    "description": "A water-resistant, dust-proof cover cut to fit a 55-inch TV. Protects the screen and body from dust, moisture and scratches when the TV is not in use, with a rear cable opening.",
+    "goodFor": {
+      "title": "This product is good for these people",
+      "intro": "Worth buying if:",
+      "items": [
+        "Homes with a lot of dust",
+        "TVs kept in a hall or a shop",
+        "Protecting a new TV during renovation or travel"
+      ]
+    },
+    "blocks": [
+      {
+        "type": "accordion",
+        "icon": "info",
+        "title": "Product details",
+        "items": [
+          {
+            "q": "Sizes",
+            "a": "Available for 32, 43, 50 and 55 inch TVs — pick your size on the store page."
+          },
+          {
+            "q": "Material",
+            "a": "Water-resistant polyester with a soft inner lining."
+          },
+          {
+            "q": "Care",
+            "a": "Hand wash in cold water and air dry."
+          }
+        ]
+      }
+    ],
+    "buttons": [
+      {
+        "platform": "Amazon",
+        "label": "Buy on Amazon",
+        "sub": "Free delivery · easy returns",
+        "url": "https://www.amazon.in/",
+        "logo": "/assets/img/brands/amazon.svg",
+        "color": "#FF9900"
+      },
+      {
+        "platform": "Flipkart",
+        "label": "Buy on Flipkart",
+        "sub": "F-Assured · fastest delivery",
+        "url": "https://www.flipkart.com/",
+        "logo": "/assets/img/brands/flipkart.svg",
+        "color": "#2874F0"
+      }
+    ]
+  },
+  {
+    "id": "smart-tv-43-4k",
+    "name": "43-inch 4K Smart LED TV",
+    "category": "TV & Accessories",
+    "brand": "TruePick",
+    "price": 24999,
+    "mrp": 34999,
+    "rating": 4.4,
+    "ratingCount": 11250,
+    "badge": "Top Pick",
+    "badgeTone": "blue",
+    "image": "/assets/img/p/smart-tv-43-4k.svg",
+    "short": "4K HDR panel with built-in streaming apps and voice remote.",
+    "description": "A 43-inch 4K HDR smart TV with built-in streaming apps, dual-band Wi-Fi, three HDMI ports and a voice remote. Sharp picture and plenty of ports for a console, set-top box and soundbar.",
+    "goodFor": {
+      "title": "This product is good for these people",
+      "intro": "Worth buying if:",
+      "items": [
+        "Small to mid-size living rooms and bedrooms",
+        "Streaming on the TV without a stick",
+        "Gaming at 4K with a console"
+      ]
+    },
+    "blocks": [
+      {
+        "type": "accordion",
+        "icon": "info",
+        "title": "Product details",
+        "items": [
+          {
+            "q": "Picture",
+            "a": "43-inch 4K (3840×2160) HDR10 panel."
+          },
+          {
+            "q": "Smart features",
+            "a": "Built-in streaming apps, dual-band Wi-Fi, voice remote."
+          },
+          {
+            "q": "Ports",
+            "a": "3 × HDMI, 2 × USB, optical audio out."
+          }
+        ]
+      }
+    ],
+    "buttons": [
+      {
+        "platform": "Amazon",
+        "label": "Buy on Amazon",
+        "sub": "Free delivery · easy returns",
+        "url": "https://www.amazon.in/",
+        "logo": "/assets/img/brands/amazon.svg",
+        "color": "#FF9900"
+      },
+      {
+        "platform": "Flipkart",
+        "label": "Buy on Flipkart",
+        "sub": "F-Assured · fastest delivery",
+        "url": "https://www.flipkart.com/",
+        "logo": "/assets/img/brands/flipkart.svg",
+        "color": "#2874F0"
+      }
+    ]
   }
 ]

@@ -371,3 +371,11 @@ footer.site .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:6px;pad
 .btn-sm{padding:8px 13px;font-size:13px;border-radius:10px;gap:7px}
 .btn-sm svg{width:16px;height:16px}
 #sort{padding:9px 13px;font-weight:700;font-size:13px;border-radius:10px;cursor:pointer}
+
+/* ---------- accessibility + polish (audit fixes) ---------- */
+:focus-visible{outline:3px solid var(--blue-2);outline-offset:2px;border-radius:8px}
+.card:focus-visible,.chip:focus-visible,.qbtn:focus-visible{outline-offset:3px}
+.fav{width:40px;height:40px}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+}
